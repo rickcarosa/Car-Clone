@@ -1,5 +1,7 @@
 {
   "name": "car-clone",
+  "main": "server/index.js",
+  "proxy": "http://localhost:3005",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
