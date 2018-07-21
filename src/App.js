@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <HashRouter>
         <Switch>
-          {/* <Route exact path = '/' component = {Home}/> */}
+          <Route exact path = '/' component = {Home}/>
         </Switch>
       </HashRouter>
     );
