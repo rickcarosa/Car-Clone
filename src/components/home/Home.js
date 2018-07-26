@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 import glamorous, {} from 'glamorous';
-import background from '../../images/roadster-social.jpg'
+import Welcome from '../welcome/Welcome';
 
 
 const Background = glamorous.div({
     background: '#000',
-    width: '100%'
-})
-
-const Img = glamorous.img({
-    height: '100vh',
-    width: '100vw',
-    backgroundSize: 'cover',
-    backgroundPostion: 'center'
+    width: '100%',
+    postion: 'relative'
 })
 
 class Home extends Component {
@@ -27,7 +21,7 @@ class Home extends Component {
         return(
             <Background>
 
-                <Img src={background} alt='background'/>
+                <Welcome/>
                 
             </Background>
         )
