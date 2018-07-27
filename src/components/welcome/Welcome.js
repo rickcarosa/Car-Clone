@@ -13,13 +13,13 @@ const Img = glamorous.img({
 })
 
 const Nav = glamorous.div({
-    position: 'relative',
+    position: 'absolute',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     alignContent: 'center',
-    height: '3.5rem',
-
+    height: '3.25rem',
+    backgroundPosition: 'center'
 })
 
 class Welcome extends Component {
