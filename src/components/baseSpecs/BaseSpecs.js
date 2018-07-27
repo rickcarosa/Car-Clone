@@ -1,34 +1,27 @@
 import React, { Component } from 'react' 
 import glamorous from 'glamorous'
 
-class BaseSpecs extends Componpent {
+const Styles = glamorous.div({
+    position: 'relative',
+    top: 'calc(100vh - 56px)',
+    height: '100vh',
+    backgroundColor: 'black',
+    color: 'white',
+    fontSize: '50px'
+})
+
+class BaseSpecs extends Component {
     render() {
+        console.log('pizza')
         return(
-            <div>
-                Base Specs
-            </div>
+            <Styles>
+                <div>
+                    <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="" loop="" muted="" playsinline="" ></video>
+                </div>
+            </Styles>
         ) 
     }
 }
 
 export default BaseSpecs
 
-const Nav = glamorous.div({
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignContent: 'center',
-    height: '3.5rem',
-    width: '5rem'
-    ,':before': {
-        content: `''`,
-        height: '100%',
-        width: '100%',
-        backgroundImage: 'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…QtMS41IDIuNi0yLjZIODVjLjMgMS4yIDEuMyAyLjQgMi43IDIuNiIvPiAgPC9nPjwvc3ZnPg==)',
-        backgroundSize: '100px 13px',
-        zIndex: '500',
-        position: 'absolute'
-    }
- 
- })
