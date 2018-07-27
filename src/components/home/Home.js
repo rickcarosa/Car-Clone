@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
+import glamorous, {} from 'glamorous';
+import Welcome from '../welcome/Welcome';
 
+
+const Background = glamorous.div({
+    background: '#000',
+    width: '100%',
+    postion: 'relative'
+})
 
 class Home extends Component {
     constructor(){
@@ -11,9 +19,11 @@ class Home extends Component {
     
     render(){
         return(
-            <div className = 'Home'>
-                home
-            </div>
+            <Background>
+
+                <Welcome/>
+                
+            </Background>
         )
     }
 }
