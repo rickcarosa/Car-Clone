@@ -6,8 +6,7 @@ import BaseSpecs from '../baseSpecs/BaseSpecs';
 
 const Background = glamorous.div({
     background: '#000',
-    width: '100%',
-    postion: 'relative'
+    width: '100%'
 })
 
 class Home extends Component {

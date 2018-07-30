@@ -2,11 +2,8 @@ import React, { Component } from 'react'
 import glamorous from 'glamorous'
 
 const Styles = glamorous.div({
-    position: 'relative',
-    top: 'calc(100vh - 56px)',
     height: '200vh',
-    width: '100vw'
-,    backgroundColor: 'black',
+    width: '100vw',
     color: 'white',
     fontSize: '50px',
     display: 'flex',
