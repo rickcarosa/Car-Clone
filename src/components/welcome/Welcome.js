@@ -138,9 +138,23 @@ const Paragraph = glamorous.p({
     fontSize: '16px',
     color: '#fff',
     textAlign: 'center',
-    opacity: '0.6'
+    opacity: '0.6',
+    left: '35%'
 })
 
+const StatList = glamorous.ul({
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'row',
+    top: '85%',
+    height: '2.82rem',
+    width: '49.5rem'
+
+})
+
+const Seconds = glamorous.li({
+    
+})
 
 class Welcome extends Component {
     constructor(){
@@ -179,6 +193,12 @@ class Welcome extends Component {
                 </Header>
 
                 <Paragraph> The quickest car in the world, with record-setting acceleration, range and performance. </Paragraph>
+
+                <StatList>
+                    <Seconds>
+
+                    </Seconds>
+                </StatList>
 
             </Div>
             
