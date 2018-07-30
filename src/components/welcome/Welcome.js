@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import glamorous, {Div, Li} from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import background from '../../images/roadster-social.jpg';
 import {Logo} from '../../images/logo.js';
 
@@ -35,7 +35,7 @@ const NavList = glamorous.ul({
     fontSize: '13px',
     color: '#222',
     listStyleType: 'none',
-    width: 'calc(100% - 16rem)'
+    width: 'calc(100% - 26rem)'
 })
 
 const ListContents = glamorous.li({
@@ -58,7 +58,7 @@ const ListSectionTwo = glamorous.li({
     alignContent: 'center',
     alignItems: 'center',
     backgroundPosition: 'center',
-    paddingLeft: '7rem'
+    paddingLeft: '14rem'
 
 })
 
@@ -104,6 +104,44 @@ const Hamburger = glamorous.span({
     }
 })
 
+const Header = glamorous.div({
+    textAlign: 'center',
+    position: 'absolute',
+    width: '100%',
+    top: '10%',
+    padding: '0'
+})
+
+const Title = glamorous.h1({
+    fontFamily: '"Gotham Light", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    fontSize: '23px',
+    color: '#333333',
+    fontWeight: '300',
+    margin: '0'
+})
+
+const TitleTwo = glamorous.h2({
+    fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontSize: '50px',
+    color: '#333333',
+    margin: '0',
+    fontWeight: '500'
+})
+
+const Paragraph = glamorous.p({
+    position: 'absolute',
+    width: '23.75rem',
+    top: '70%',
+    lineHeight: '24px',
+    fontFamily: '"HeiS ASC Simplified Chinese","HeiS ASC Simplified Chinese_n5","HeiT ASC Traditional Chinese","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;',
+    fontWeight: '300',
+    fontSize: '16px',
+    color: '#fff',
+    textAlign: 'center',
+    opacity: '0.6'
+})
+
+
 class Welcome extends Component {
     constructor(){
         super()
@@ -114,8 +152,9 @@ class Welcome extends Component {
 
     render(){
         return(
-            <Div>
+            <Div height='100vh'>
                 <BackgroundImg src={background} alt='background'/>
+
                 <Nav>
                     <Logo/>
                     <NavList>
@@ -133,6 +172,14 @@ class Welcome extends Component {
                         </ListSectionTwo>
                     </NavList>
                 </Nav>
+
+                <Header> 
+                    <Title> Tesla </Title>
+                    <TitleTwo> Roadster </TitleTwo>
+                </Header>
+
+                <Paragraph> The quickest car in the world, with record-setting acceleration, range and performance. </Paragraph>
+
             </Div>
             
         )
