@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import glamorous, {Div} from 'glamorous';
 import background from '../../images/roadster-social.jpg';
 import {Logo} from '../../images/logo.js';
+import {Speedometer, Shadow, Needle} from '../../images/stats.js';
 
 
 const BackgroundImg = glamorous.img({
@@ -144,17 +145,33 @@ const Paragraph = glamorous.p({
 
 const StatList = glamorous.ul({
     position: 'absolute',
-    display: 'flex',
-    flexDirection: 'row',
+    // display: 'flex',
+    // flexDirection: 'row',
     top: '85%',
     height: '2.82rem',
-    width: '49.5rem'
-
+    width: '49.5rem',
+    listStyleType: 'none',
+    left: '20%',
+    margin: '0'
 })
 
 const Seconds = glamorous.li({
+    position: 'absolute',
+    width: '10rem',
+    height: '3.25rem',
+    borderRight: '1px solid rgba(255,255,255,0.4)',
+    color: '#fff',
+    top: '0',
+    left: '0'
+})
+
+const TopSection = glamorous.div({
+    position: 'absolute',
+    transform: 'scale(0.45)',
+    transformOrigin: '50% 0',
     
 })
+
 
 class Welcome extends Component {
     constructor(){
@@ -196,7 +213,11 @@ class Welcome extends Component {
 
                 <StatList>
                     <Seconds>
-
+                        <TopSection>
+                            <Speedometer/>
+                            <Shadow/>
+                            <Needle/>
+                        </TopSection>
                     </Seconds>
                 </StatList>
 
