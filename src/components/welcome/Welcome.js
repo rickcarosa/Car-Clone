@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import glamorous, {Div} from 'glamorous';
+import glamorous, {Div, Sub} from 'glamorous';
 import background from '../../images/roadster-social.jpg';
 import {Logo} from '../../images/logo.js';
 import {Speedometer, Shadow, Needle} from '../../images/stats.js';
@@ -151,13 +151,13 @@ const StatList = glamorous.ul({
     height: '2.82rem',
     width: '49.5rem',
     listStyleType: 'none',
-    left: '20%',
+    left: '18%',
     margin: '0'
 })
 
 const Seconds = glamorous.li({
     position: 'absolute',
-    width: '10rem',
+    width: '12.375rem',
     height: '3.25rem',
     borderRight: '1px solid rgba(255,255,255,0.4)',
     color: '#fff',
@@ -165,13 +165,64 @@ const Seconds = glamorous.li({
     left: '0'
 })
 
-const TopSection = glamorous.div({
+const TopSectionOne = glamorous.div({
     position: 'absolute',
     transform: 'scale(0.45)',
     transformOrigin: '50% 0',
+    left: '24px'
+})
+
+const SpeedSec = glamorous.span({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontWeight: '400',
+    fontSize: '70px',
+    color: '#fff',
+    position: 'absolute',
+    top: '-16px',
+    display: 'inline-flex'
+})
+
+const LittleS = glamorous.span({
+    fontSize: '46px',
+    paddingTop: '15px'
+})
+
+const BottomSectionOne = glamorous.div({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    width: '100%',
+    fontWeight: '300',
+    fontSize: '12px',
+    color: '#fff',
+    lineHeight: '20px',
+    marginTop: '34px',
+    textAlign: 'center'
+})
+
+const MilesPerHour = glamorous.li({
+    position: 'absolute',
+    width: '22.375rem',
+    height: '3.25rem',
+    borderRight: '1px solid rgba(255,255,255,0.4)',
+    color: '#fff',
     
 })
 
+const TopSectionTwo = glamorous.div({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontWeight: '400',
+    paddingLeft: '14rem',
+    position: 'absolute',
+    top: '-7px',
+    // ':nth-child(1)':{
+    //     fontSize: '20px'
+    // }
+})
+
+const Number = glamorous.span({
+    transform: 'scale(0.9)',
+    transformOrigin: '50% 0',
+    fontSize: '35px'
+})
 
 class Welcome extends Component {
     constructor(){
@@ -185,7 +236,6 @@ class Welcome extends Component {
         return(
             <Div height='100vh'>
                 <BackgroundImg src={background} alt='background'/>
-
                 <Nav>
                     <Logo/>
                     <NavList>
@@ -213,14 +263,23 @@ class Welcome extends Component {
 
                 <StatList>
                     <Seconds>
-                        <TopSection>
+                        <TopSectionOne>
                             <Speedometer/>
                             <Shadow/>
                             <Needle/>
-                        </TopSection>
+                                <SpeedSec>
+                                    1.9 <LittleS> <Sub> s </Sub> </LittleS>
+                                </SpeedSec>
+                        </TopSectionOne>
+                        <BottomSectionOne> 0-60 mph </BottomSectionOne>
                     </Seconds>
-                </StatList>
 
+                    <MilesPerHour>
+                            <TopSectionTwo>
+                                <Sub> + </Sub> <Number> 250 </Number> <Sub> mph </Sub>
+                            </TopSectionTwo>
+                    </MilesPerHour>
+                </StatList>
             </Div>
             
         )
