@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import glamorous, {Div, Sub} from 'glamorous';
+import glamor, {css} from 'glamor';
 import background from '../../images/roadster-social.jpg';
 import {Logo} from '../../images/logo.js';
-import {Speedometer, Shadow, Needle} from '../../images/stats.js';
+import {Speedometer, Shadow, Needle, Arrow} from '../../images/stats.js';
 
 
 const BackgroundImg = glamorous.img({
@@ -85,11 +86,11 @@ const ListSectionThree = glamorous.li({
 const Hamburger = glamorous.span({
     width: '18px',
     height: '2px',
-    backgroundColor: 'red',
+    backgroundColor: 'black',
     ':before':{
         width: '18px',
         height: '2px',
-        backgroundColor: 'red',
+        backgroundColor: 'black',
         content: `''`,
         position: 'absolute',
         top: 'calc(50% + 5px)'
@@ -97,7 +98,7 @@ const Hamburger = glamorous.span({
     ':after':{
         width: '18px',
         height: '2px',
-        backgroundColor: 'red',
+        backgroundColor: 'black',
         content: `''`,
         position: 'absolute',
         top: 'calc(50% - 6px)'
@@ -296,6 +297,19 @@ const ReserveButton = glamorous.button({
     }
 })
 
+const bounce = css.keyframes({
+    '0%': 'none',
+    '50%': 'none',
+    '100%': {transform: `translateY(0)`},
+    '10%': {transform: `translateY(-7px)`},
+    '60%': {transform: `translateY(-4px)`}
+    
+})
+
+const ArrowDiv = glamorous.div({
+    animation: `${bounce} 1.5s infinite`
+})
+
 class Welcome extends Component {
     constructor(){
         super()
@@ -368,6 +382,9 @@ class Welcome extends Component {
                         Reserve now
                     </ReserveButton>
                 </StatList>
+                <ArrowDiv>
+                    <Arrow/>
+                </ArrowDiv>
             </Div>
             
         )
