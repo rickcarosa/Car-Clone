@@ -144,8 +144,6 @@ const Paragraph = glamorous.p({
 
 const StatList = glamorous.ul({
     position: 'absolute',
-    // display: 'flex',
-    // flexDirection: 'row',
     top: '85%',
     height: '2.82rem',
     width: '49.5rem',
@@ -239,6 +237,44 @@ const BottomSectionTwo = glamorous.div({
     marginLeft: '14.5rem'
 })
 
+const MilesRange = glamorous.li({
+    position: 'absolute',
+    width: '22.375rem',
+    height: '3.25rem',
+    borderRight: '1px solid rgba(255,255,255,0.4)',
+    color: '#fff'
+})
+
+const TopSectionThree = glamorous.div({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontWeight: '400',
+    paddingLeft: '26rem',
+    position: 'absolute',
+    top: '-7px'
+})
+
+const Miles = glamorous.span({
+    fontSize: '32px'
+})
+
+const MilesSub = glamorous.span({
+    position: 'absolute',
+    paddingLeft: '3.5rem',
+    top: '3px',
+    fontSize: '24px'
+})
+
+const BottomSectionThree = glamorous.div({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    width: '100%',
+    fontWeight: '300',
+    marginTop: '34px',
+    fontSize: '12px',
+    color: '#fff',
+    lineHeight: '20px',
+    marginLeft: '26.5rem'
+})
+
 class Welcome extends Component {
     constructor(){
         super()
@@ -299,6 +335,15 @@ class Welcome extends Component {
                             </TopSectionTwo>
                             <BottomSectionTwo> Top Speed </BottomSectionTwo>
                     </MilesPerHour>
+
+                    <MilesRange>
+                        <TopSectionThree>
+                            <Miles> 620 </Miles> <MilesSub> <Sub> mi </Sub> </MilesSub>
+                        </TopSectionThree>
+                        <BottomSectionThree> Miles Range </BottomSectionThree>
+                    </MilesRange>
+
+                    
                 </StatList>
             </Div>
             
