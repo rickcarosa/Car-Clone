@@ -275,6 +275,27 @@ const BottomSectionThree = glamorous.div({
     marginLeft: '26.5rem'
 })
 
+const ReserveButton = glamorous.button({
+    fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    position: 'absolute',
+    marginLeft: '34.5rem',
+    border: '3px solid white',
+    borderRadius: '21px',
+    height: '41px',
+    width: '12.75rem',
+    marginTop: '7px',
+    fontWeight: '400',
+    cursor: 'pointer',
+    color: '#fff',
+    backgroundColor: 'transparent',
+    fontSize: '15px',
+    ':hover':{
+        color: '#333',
+        transition: '.5s',
+        backgroundColor: '#fff'
+    }
+})
+
 class Welcome extends Component {
     constructor(){
         super()
@@ -343,7 +364,9 @@ class Welcome extends Component {
                         <BottomSectionThree> Miles Range </BottomSectionThree>
                     </MilesRange>
 
-                    
+                    <ReserveButton> 
+                        Reserve now
+                    </ReserveButton>
                 </StatList>
             </Div>
             
