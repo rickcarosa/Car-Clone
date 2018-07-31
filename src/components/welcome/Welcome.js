@@ -60,7 +60,6 @@ const ListSectionTwo = glamorous.li({
     alignItems: 'center',
     backgroundPosition: 'center',
     paddingLeft: '14rem'
-
 })
 
 const ListContentsTwo = glamorous.li({
@@ -203,25 +202,41 @@ const MilesPerHour = glamorous.li({
     width: '22.375rem',
     height: '3.25rem',
     borderRight: '1px solid rgba(255,255,255,0.4)',
-    color: '#fff',
-    
+    color: '#fff'
 })
 
 const TopSectionTwo = glamorous.div({
     fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
     fontWeight: '400',
-    paddingLeft: '14rem',
+    paddingLeft: '13.8rem',
     position: 'absolute',
-    top: '-7px',
-    // ':nth-child(1)':{
-    //     fontSize: '20px'
-    // }
+    top: '-7px'
+})
+
+const Plus = glamorous.span({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontWeight: '500',
+    paddingTop: '3px',
+    marginLeft: '-12px',
+    position: 'absolute',
+    fontSize: '22px'
 })
 
 const Number = glamorous.span({
     transform: 'scale(0.9)',
     transformOrigin: '50% 0',
-    fontSize: '35px'
+    fontSize: '31px'
+})
+
+const BottomSectionTwo = glamorous.div({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    width: '100%',
+    fontWeight: '300',
+    fontSize: '12px',
+    color: '#fff',
+    lineHeight: '20px',
+    marginTop: '34px',
+    marginLeft: '14.5rem'
 })
 
 class Welcome extends Component {
@@ -276,8 +291,13 @@ class Welcome extends Component {
 
                     <MilesPerHour>
                             <TopSectionTwo>
-                                <Sub> + </Sub> <Number> 250 </Number> <Sub> mph </Sub>
+                                <Plus> <Sub> + </Sub> </Plus> <Number> 250 </Number> <Sub margin-left='3.3rem'
+                                                                                          position='absolute' 
+                                                                                          margin-top='-26px'
+                                                                                          font-size='19px'> mph 
+                                                                                     </Sub>
                             </TopSectionTwo>
+                            <BottomSectionTwo> Top Speed </BottomSectionTwo>
                     </MilesPerHour>
                 </StatList>
             </Div>
