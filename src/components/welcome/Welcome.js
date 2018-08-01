@@ -71,7 +71,6 @@ const ListContentsTwo = glamorous.li({
         transition: '.2s ease-in-out',
         cursor: 'pointer'
     }
-   
 })
 
 const ListSectionThree = glamorous.li({
@@ -303,7 +302,6 @@ const bounce = css.keyframes({
     '100%': {transform: `translateY(0)`},
     '10%': {transform: `translateY(-7px)`},
     '60%': {transform: `translateY(-4px)`}
-    
 })
 
 const ArrowDiv = glamorous.div({
@@ -382,11 +380,11 @@ class Welcome extends Component {
                         Reserve now
                     </ReserveButton>
                 </StatList>
+
                 <ArrowDiv>
                     <Arrow/>
                 </ArrowDiv>
             </Div>
-            
         )
     }
 }
