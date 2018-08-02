@@ -37,7 +37,7 @@ const NavList = glamorous.ul({
     fontSize: '13px',
     color: '#222',
     listStyleType: 'none',
-    width: 'calc(100% - 26rem)'
+    width: 'calc(100% - 26.5rem)'
 })
 
 const ListContents = glamorous.li({
@@ -60,7 +60,7 @@ const ListSectionTwo = glamorous.li({
     alignContent: 'center',
     alignItems: 'center',
     backgroundPosition: 'center',
-    paddingLeft: '14rem'
+    paddingLeft: '15rem'
 })
 
 const ListContentsTwo = glamorous.li({
@@ -82,10 +82,22 @@ const ListSectionThree = glamorous.li({
     paddingLeft: '1rem'
 })
 
+const HamburgerDiv = glamorous.div({
+    height: '20px',
+    width: '18px',
+    zIndex: '3', 
+    backgroundColor: 'transparent',
+    cursor: 'pointer'
+})
+
 const Hamburger = glamorous.span({
     width: '18px',
     height: '2px',
     backgroundColor: 'black',
+    zIndex: '3',
+    cursor: 'pointer',
+    marginTop: '8px',
+    position: 'absolute',
     ':before':{
         width: '18px',
         height: '2px',
@@ -308,13 +320,51 @@ const ArrowDiv = glamorous.div({
     animation: `${bounce} 1.5s infinite`
 })
 
+const SlideMenu = glamorous.ul({
+    height: '100vh',
+    width: '160px',
+    backgroundColor: '#fff',
+    opacity: '0.9',
+    zIndex: '2',
+    top: '0',
+    position: 'absolute',
+    right: '0',
+    margin: 'auto',
+    transition: 'right 1s ease-out'
+})
+
+const MenuContentsDiv = glamorous.div({
+    width: '150px',
+    height: '456px',
+    paddingTop: '35px',
+    marginLeft: '-20px'
+})
+
+const MenuContents = glamorous.li({
+    fontFamily: 'Gotham Medium,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;',
+    color: '#222',
+    listStyleType: 'none',
+    padding: '20px 10px',
+    fontSize: '13px',
+    opacity: '1',
+    fontWeight: '500',
+    borderBottom: '1px solid #ddd'
+})
+
 class Welcome extends Component {
     constructor(){
         super()
         this.state = {
-
+            menu: 'false'
         }
     }
+
+    handleMenu(){
+        this.setState({
+            menu: !this.state.menu
+        })
+    }
+
 
     render(){
         return(
@@ -332,11 +382,32 @@ class Welcome extends Component {
                             <ListContentsTwo> SHOP </ListContentsTwo>
                             <ListContentsTwo> SIGN IN </ListContentsTwo>
                             <ListSectionThree>
-                                <Hamburger/>
+                                <HamburgerDiv onClick={() => this.handleMenu()}>
+                                    <Hamburger/>
+                                </HamburgerDiv>
                             </ListSectionThree>
                         </ListSectionTwo>
                     </NavList>
                 </Nav>
+
+                { 
+                    !this.state.menu
+                    
+                    &&
+
+                    <SlideMenu>
+                        <MenuContentsDiv>
+                            <MenuContents> NEWS </MenuContents>
+                            <MenuContents> NEW INVENTORY </MenuContents>
+                            <MenuContents> USED INVENTORY </MenuContents>
+                            <MenuContents> CHARGING </MenuContents>
+                            <MenuContents> FIND US </MenuContents>
+                            <MenuContents> SEMI </MenuContents>
+                            <MenuContents> CARBON IMPACT </MenuContents>
+                            <MenuContents> SUPPORT </MenuContents>
+                        </MenuContentsDiv>
+                    </SlideMenu>
+                }
 
                 <Header> 
                     <Title> Tesla </Title>
