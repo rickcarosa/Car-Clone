@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import glamorous, {} from 'glamorous';
-import Welcome from '../welcome/Welcome';
-import BaseSpecs from '../baseSpecs/BaseSpecs';
+import Welcome from './Welcome';
+import BaseSpecs from './BaseSpecs';
 
 
 const Background = glamorous.div({
