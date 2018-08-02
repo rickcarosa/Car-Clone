@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import glamorous, {Div, Sub} from 'glamorous';
 import glamor, {css} from 'glamor';
-import background from '../../images/roadster-social.jpg';
-import {Logo} from '../../images/logo.js';
-import {Speedometer, Shadow, Needle, Arrow} from '../../images/stats.js';
+import background from '../images/roadster-social.jpg';
+import {Logo} from '../images/logo.js';
+import {Speedometer, Shadow, Needle, Arrow} from '../images/stats.js';
 
 
 const BackgroundImg = glamorous.img({
