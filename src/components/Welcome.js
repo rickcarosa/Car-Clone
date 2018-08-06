@@ -470,7 +470,7 @@ class Welcome extends Component {
                                 </SlideMenu>
                             </SlideDivTwo>
                     </SlideDiv>
-                }
+                } 
 
                 <Header> 
                     <Title> Tesla </Title>
