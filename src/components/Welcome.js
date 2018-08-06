@@ -116,6 +116,39 @@ const Hamburger = glamorous.span({
     }
 })
 
+const rotateBefore = css.keyframes({
+    '0%': 'none',
+    '100%': {transform: 'rotate(45deg)'}
+})
+
+const rotateAfter = css.keyframes({
+    '0%': 'none',
+    '100%': {transform: 'rotate(-45deg)'}
+})
+
+const HamburgerX = glamorous.span({
+    ':before':{
+        width: '18px',
+        height: '2px',
+        backgroundColor: 'black',
+        content: `''`,
+        position: 'absolute',
+        top: 'calc(50%)',
+        animation: `${rotateBefore} .4s`,
+        animationFillMode: 'forwards'
+    },
+    ':after':{
+        width: '18px',
+        height: '2px',
+        backgroundColor: 'black',
+        content: `''`,
+        position: 'absolute',
+        top: 'calc(50%)',
+        animation: `${rotateAfter} .4s`,
+        animationFillMode: 'forwards'
+    }
+})
+
 const Header = glamorous.div({
     textAlign: 'center',
     position: 'absolute',
@@ -320,17 +353,36 @@ const ArrowDiv = glamorous.div({
     animation: `${bounce} 1.5s infinite`
 })
 
+const SlideDiv = glamorous.div({
+    height: '100vh',
+    width: '100%'
+})
+
+const SlideDivTwo = glamorous.span({
+    backgroundColor: 'rgba(0,0,0,0.20)',
+    opacity: '1',
+    width: '100%',
+    height: '100vh',
+    position: 'absolute'
+})
+
+const slide = css.keyframes({
+    '0%': {transform: 'translateX(200px)'},
+    // '100%': {transform: 'translateX(-200px)'}
+    '100%': 'none'
+})
+
 const SlideMenu = glamorous.ul({
     height: '100vh',
     width: '160px',
     backgroundColor: '#fff',
-    opacity: '0.9',
+    opacity: '0.95',
     zIndex: '2',
     top: '0',
     position: 'absolute',
-    right: '0',
+    right: '0px',
     margin: 'auto',
-    transition: 'right 1s ease-out'
+    animation: `${slide} .3s`
 })
 
 const MenuContentsDiv = glamorous.div({
@@ -355,13 +407,20 @@ class Welcome extends Component {
     constructor(){
         super()
         this.state = {
-            menu: 'false'
+            menu: 'false',
+            hamburgerX: 'false'
         }
     }
 
     handleMenu(){
         this.setState({
             menu: !this.state.menu
+        })
+    }
+
+    handleHamburgerX(){
+        this.setState({
+            hamburgerX: !this.state.hamburgerX
         })
     }
 
@@ -382,8 +441,8 @@ class Welcome extends Component {
                             <ListContentsTwo> SHOP </ListContentsTwo>
                             <ListContentsTwo> SIGN IN </ListContentsTwo>
                             <ListSectionThree>
-                                <HamburgerDiv onClick={() => this.handleMenu()}>
-                                    <Hamburger/>
+                                <HamburgerDiv onClick={() => {this.handleMenu(); this.handleHamburgerX()}}>
+                                    { this.state.hamburgerX && <Hamburger/>} { !this.state.hamburgerX && <HamburgerX/>}
                                 </HamburgerDiv>
                             </ListSectionThree>
                         </ListSectionTwo>
@@ -395,18 +454,22 @@ class Welcome extends Component {
                     
                     &&
 
-                    <SlideMenu>
-                        <MenuContentsDiv>
-                            <MenuContents> NEWS </MenuContents>
-                            <MenuContents> NEW INVENTORY </MenuContents>
-                            <MenuContents> USED INVENTORY </MenuContents>
-                            <MenuContents> CHARGING </MenuContents>
-                            <MenuContents> FIND US </MenuContents>
-                            <MenuContents> SEMI </MenuContents>
-                            <MenuContents> CARBON IMPACT </MenuContents>
-                            <MenuContents> SUPPORT </MenuContents>
-                        </MenuContentsDiv>
-                    </SlideMenu>
+                    <SlideDiv>
+                        <SlideDivTwo> 
+                                <SlideMenu>
+                                    <MenuContentsDiv>
+                                        <MenuContents> NEWS </MenuContents>
+                                        <MenuContents> NEW INVENTORY </MenuContents>
+                                        <MenuContents> USED INVENTORY </MenuContents>
+                                        <MenuContents> CHARGING </MenuContents>
+                                        <MenuContents> FIND US </MenuContents>
+                                        <MenuContents> SEMI </MenuContents>
+                                        <MenuContents> CARBON IMPACT </MenuContents>
+                                        <MenuContents> SUPPORT </MenuContents>
+                                    </MenuContentsDiv>
+                                </SlideMenu>
+                            </SlideDivTwo>
+                    </SlideDiv>
                 }
 
                 <Header> 
