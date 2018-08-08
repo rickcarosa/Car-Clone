@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import glamorous, {} from 'glamorous';
 import Welcome from './Welcome';
 import BaseSpecs from './BaseSpecs';
+import Aero from './Aero';
 
 
 const Background = glamorous.div({
@@ -22,7 +23,8 @@ class Home extends Component {
             <Background>
 
                 <Welcome/>
-                <BaseSpecs />
+                <BaseSpecs/>
+                <Aero/>
                 
             </Background>
         )
