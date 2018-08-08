@@ -26,6 +26,7 @@ const Nav = glamorous.div({
     justifyContent: 'space-between'
 })
 
+
 const NavList = glamorous.ul({
     display: 'flex',
     flexDirection: 'row',
@@ -88,6 +89,15 @@ const HamburgerDiv = glamorous.div({
     zIndex: '3', 
     backgroundColor: 'transparent',
     cursor: 'pointer'
+})
+
+const CloseMenuDiv = glamorous.div({
+    height: '20px',
+    width: '18px',
+    backgroundColor: 'red',
+    cursor: 'pointer',
+    position: 'absolute',
+    zIndex: '50'
 })
 
 const Hamburger = glamorous.span({
@@ -372,6 +382,11 @@ const slide = css.keyframes({
     '100%': 'none'
 })
 
+const slideClose = css.keyframes({
+    '0%': 'none',
+    '100%': {transform: 'translateX(200px)'}
+})
+
 const SlideMenu = glamorous.ul({
     height: '100vh',
     width: '160px',
@@ -380,9 +395,22 @@ const SlideMenu = glamorous.ul({
     zIndex: '2',
     top: '0',
     position: 'absolute',
-    right: '0px',
+    right: '0',
     margin: 'auto',
     animation: `${slide} .3s`
+})
+
+const SlideMenuClose = glamorous.ul({
+    height: '100vh',
+    width: '160px',
+    backgroundColor: '#fff',
+    opacity: '0.95',
+    zIndex: '3',
+    top: '0',
+    position: 'absolute',
+    right: '-200px',
+    margin: 'auto',
+    animation: `${slideClose} 1s`
 })
 
 const MenuContentsDiv = glamorous.div({
@@ -408,7 +436,8 @@ class Welcome extends Component {
         super()
         this.state = {
             menu: 'false',
-            hamburgerX: 'false'
+            hamburgerX: 'false',
+            closeMenu: 'false'
         }
     }
 
@@ -424,30 +453,38 @@ class Welcome extends Component {
         })
     }
 
+    handleCloseMenu(){
+        this.setState({
+            closeMenu: !this.state.closeMenu
+        })
+    }
 
     render(){
         return(
             <Div height='100vh'>
                 <BackgroundImg src={background} alt='background'/>
-                <Nav>
-                    <Logo/>
-                    <NavList>
-                        <ListContents> MODEL S </ListContents>
-                        <ListContents> MODEL X </ListContents>
-                        <ListContents> MODEL 3 </ListContents>
-                        <ListContents> ROADSTER </ListContents>
-                        <ListContents> ENERGY </ListContents>
-                        <ListSectionTwo>
-                            <ListContentsTwo> SHOP </ListContentsTwo>
-                            <ListContentsTwo> SIGN IN </ListContentsTwo>
-                            <ListSectionThree>
-                                <HamburgerDiv onClick={() => {this.handleMenu(); this.handleHamburgerX()}}>
-                                    { this.state.hamburgerX && <Hamburger/>} { !this.state.hamburgerX && <HamburgerX/>}
-                                </HamburgerDiv>
-                            </ListSectionThree>
-                        </ListSectionTwo>
-                    </NavList>
-                </Nav>
+                    <Nav>
+                        <Logo/>
+                        <NavList>
+                            <ListContents> MODEL S </ListContents>
+                            <ListContents> MODEL X </ListContents>
+                            <ListContents> MODEL 3 </ListContents>
+                            <ListContents> ROADSTER </ListContents>
+                            <ListContents> ENERGY </ListContents>
+                            <ListSectionTwo>
+                                <ListContentsTwo> SHOP </ListContentsTwo>
+                                <ListContentsTwo> SIGN IN </ListContentsTwo>
+                                <ListSectionThree>
+                                    <HamburgerDiv onClick={() => {this.handleMenu()}}>
+                                        { this.state.menu && <Hamburger/>}
+                                    </HamburgerDiv>
+                                    { !this.state.menu && <CloseMenuDiv onClick={() => {this.handleMenu(); this.handleHamburgerX(); this.handleCloseMenu()}}>
+                                        <HamburgerX/>
+                                    </CloseMenuDiv>}
+                                </ListSectionThree>
+                            </ListSectionTwo>
+                        </NavList>
+                    </Nav>
 
                 { 
                     !this.state.menu
@@ -471,6 +508,29 @@ class Welcome extends Component {
                             </SlideDivTwo>
                     </SlideDiv>
                 } 
+
+                {/* {
+                    !this.state.closeMenu
+
+                    &&
+
+                    <SlideDiv>
+                        <SlideDivTwo> 
+                                <SlideMenuClose>
+                                    <MenuContentsDiv>
+                                        <MenuContents> NEWS </MenuContents>
+                                        <MenuContents> NEW INVENTORY </MenuContents>
+                                        <MenuContents> USED INVENTORY </MenuContents>
+                                        <MenuContents> CHARGING </MenuContents>
+                                        <MenuContents> FIND US </MenuContents>
+                                        <MenuContents> SEMI </MenuContents>
+                                        <MenuContents> CARBON IMPACT </MenuContents>
+                                        <MenuContents> SUPPORT </MenuContents>
+                                    </MenuContentsDiv>
+                                </SlideMenuClose>
+                            </SlideDivTwo>
+                    </SlideDiv>
+                } */}
 
                 <Header> 
                     <Title> Tesla </Title>
