@@ -3,6 +3,7 @@ import glamorous, {} from 'glamorous';
 import Welcome from './Welcome';
 import BaseSpecs from './BaseSpecs';
 import Aero from './Aero';
+import Interior from './Interior';
 
 
 const Background = glamorous.div({
@@ -25,6 +26,7 @@ class Home extends Component {
                 <Welcome/>
                 <BaseSpecs/>
                 <Aero/>
+                <Interior/>
                 
             </Background>
         )
