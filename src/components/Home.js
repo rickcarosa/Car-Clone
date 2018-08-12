@@ -5,6 +5,7 @@ import BaseSpecs from './BaseSpecs';
 import Aero from './Aero';
 import Interior from './Interior';
 import GlassRoof from './GlassRoof';
+import Video from './Video';
 
 
 const Background = glamorous.div({
@@ -29,6 +30,7 @@ class Home extends Component {
                 <Aero/>
                 <Interior/>
                 <GlassRoof/>
+                <Video/>
                 
             </Background>
         )

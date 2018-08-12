@@ -26,14 +26,13 @@ const Nav = glamorous.div({
     justifyContent: 'space-between'
 })
 
-
 const NavList = glamorous.ul({
+    fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
     display: 'flex',
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',
     backgroundPosition: 'center',
-    fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
     fontWeight: '400',
     fontSize: '13px',
     color: '#222',
