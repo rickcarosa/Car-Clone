@@ -6,7 +6,7 @@ import Aero from './Aero';
 import Interior from './Interior';
 import GlassRoof from './GlassRoof';
 import Video from './Video';
-
+import Footer from './Footer';
 
 const Background = glamorous.div({
     background: '#000',
@@ -31,6 +31,7 @@ class Home extends Component {
                 <Interior/>
                 <GlassRoof/>
                 <Video/>
+                <Footer/>
                 
             </Background>
         )
