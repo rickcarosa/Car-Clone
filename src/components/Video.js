@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 
 
 const VideoDiv = glamorous.div({
-    height: '900px',
+    height: '875px',
     width: '100%',
     display: 'flex',
     justifyContent: 'center'
@@ -76,7 +76,7 @@ const NewsButton = glamorous.button({
     color: '#fff',
     backgroundColor: 'transparent',
     fontSize: '15px',
-    marginTop: '10px',
+    marginTop: '15px',
     ':hover':{
         color: '#333',
         transition: '.5s',
