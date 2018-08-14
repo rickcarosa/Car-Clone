@@ -298,7 +298,7 @@ const MilesRange = glamorous.li({
     borderRight: '1px solid rgba(255,255,255,0.4)',
     color: '#fff'
 })
-23
+
 const TopSectionThree = glamorous.div({
     fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
     fontWeight: '400',
@@ -375,6 +375,13 @@ const SlideDivTwo = glamorous.span({
     position: 'absolute'
 })
 
+const SlideDivTwoClose = glamorous.span({
+    backgroundColor: 'rgba(0,0,0,0.20)',
+    opacity: '1',
+    width: '100%',
+    height: '100vh'
+})
+
 const slide = css.keyframes({
     '0%': {transform: 'translateX(200px)'},
     // '100%': {transform: 'translateX(-200px)'}
@@ -396,7 +403,7 @@ const SlideMenu = glamorous.ul({
     position: 'absolute',
     right: '0',
     margin: 'auto',
-    animation: `${slide} .3s`
+    animation: `${slide} .3s, ${slideClose} 1s alternate`
 })
 
 const SlideMenuClose = glamorous.ul({
@@ -404,7 +411,7 @@ const SlideMenuClose = glamorous.ul({
     width: '160px',
     backgroundColor: '#fff',
     opacity: '0.95',
-    zIndex: '3',
+    zIndex: '2',
     top: '0',
     position: 'absolute',
     right: '-200px',
@@ -474,25 +481,23 @@ class Welcome extends Component {
                                 <ListContentsTwo> SHOP </ListContentsTwo>
                                 <ListContentsTwo> SIGN IN </ListContentsTwo>
                                 <ListSectionThree>
-                                    <HamburgerDiv onClick={() => {this.handleMenu()}}>
-                                        { this.state.menu && <Hamburger/>}
+                                    <HamburgerDiv onClick={() => {this.handleMenu(); this.handleHamburgerX(); this.handleCloseMenu()}}>
+                                        {this.state.menu && <Hamburger/>}
+                                        {!this.state.closeMenu && <CloseMenuDiv  onClick={() => {this.handleCloseMenu()}}> <HamburgerX/> </CloseMenuDiv>}
                                     </HamburgerDiv>
-                                    { !this.state.menu && <CloseMenuDiv onClick={() => {this.handleMenu(); this.handleHamburgerX(); this.handleCloseMenu()}}>
-                                        <HamburgerX/>
-                                    </CloseMenuDiv>}
                                 </ListSectionThree>
                             </ListSectionTwo>
                         </NavList>
                     </Nav>
 
                 { 
-                    !this.state.menu
+                    !this.state.menu 
                     
                     &&
 
                     <SlideDiv>
-                        <SlideDivTwo> 
-                                <SlideMenu>
+                        <SlideDivTwo>
+                            <SlideMenu>
                                     <MenuContentsDiv>
                                         <MenuContents> NEWS </MenuContents>
                                         <MenuContents> NEW INVENTORY </MenuContents>
@@ -503,8 +508,8 @@ class Welcome extends Component {
                                         <MenuContents> CARBON IMPACT </MenuContents>
                                         <MenuContents> SUPPORT </MenuContents>
                                     </MenuContentsDiv>
-                                </SlideMenu>
-                            </SlideDivTwo>
+                            </SlideMenu>
+                        </SlideDivTwo>
                     </SlideDiv>
                 } 
 
@@ -514,7 +519,7 @@ class Welcome extends Component {
                     &&
 
                     <SlideDiv>
-                        <SlideDivTwo> 
+                        <SlideDivTwoClose> 
                                 <SlideMenuClose>
                                     <MenuContentsDiv>
                                         <MenuContents> NEWS </MenuContents>
@@ -527,7 +532,7 @@ class Welcome extends Component {
                                         <MenuContents> SUPPORT </MenuContents>
                                     </MenuContentsDiv>
                                 </SlideMenuClose>
-                            </SlideDivTwo>
+                            </SlideDivTwoClose>
                     </SlideDiv>
                 } */}
 
