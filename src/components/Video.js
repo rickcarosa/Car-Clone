@@ -1,19 +1,31 @@
 import React, {Component} from 'react';
 import glamorous from 'glamorous';
+import ReactPlayer from 'react-player';
 
 
 const VideoDiv = glamorous.div({
-    height: '875px',
+    height: '925px',
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '5rem'
+})
+
+const PlayerDiv = glamorous.div({
+    maxWidth: '1060px',
+    height: '575px',
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: '20px',
+    paddingRight: '20px'
 })
 
 const TextDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'center',
     position: 'absolute',
-    marginTop: '33rem'
+    marginTop: '36rem'
 })
 
 const UnveilDate = glamorous.p({
@@ -27,7 +39,7 @@ const LineDiv = glamorous.div({
     position: 'absolute',
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '37.5rem',
+    marginTop: '40.5rem',
     ':before':{
         width: '1px',
         height: '75px',
@@ -44,7 +56,7 @@ const ButtonDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    marginTop: '45rem'
+    marginTop: '48.5rem'
 })
 
 const ReserveButton = glamorous.button({
@@ -95,7 +107,13 @@ class Video extends Component {
     render(){
         return(
             <VideoDiv>
-                <video src='https://player.vimeo.com/video/249563752' style={{width: 'auto', height: '530px'}}></video>
+                <PlayerDiv>
+                    <ReactPlayer
+                    url='https://player.vimeo.com/video/249563752?color=ff0000&title=0&byline=0&portrait=0&autoplay=0&autopause=0&player_id=249563752'
+                    width='100%'
+                    height='100%'
+                    />
+                 </PlayerDiv>
                 <TextDiv>
                     <UnveilDate>
                         Watch the Roadster Unveil · November 16, 2017
