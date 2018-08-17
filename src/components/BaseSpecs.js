@@ -22,7 +22,6 @@ class BaseSpecs extends Component {
             <Styles>
                 <VideoDiv>
                     <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="" loop muted="" playsinline="" style={{height: '216px', width: 'auto'}}></video>
-                    
                 </VideoDiv>
             </Styles>
         ) 
