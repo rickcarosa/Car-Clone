@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import glamorous from 'glamorous';
+import glamor, {css} from 'glamor';
 import GlassTop from '../images/top@2.jpg';
+import NoGlassTop from '../images/top_2@2.jpg'
 import {connect} from 'react-redux';
 import {updateYoffset} from '../ducks/reducer'
 
@@ -14,8 +16,17 @@ const GlassRoofDiv = glamorous.div({
     marginTop: '-5rem'
 })
 
+// const reveal = css.keyframes({
+//     '0%': {opacity: '0'},
+//     '50%': {opacity: '1'},
+//     '100%': {opacity: '0'}
+// })
+
 const GlassTopImg = glamorous.img({
-    height: '896px'
+    height: '896px',
+    opacity: '0',
+    transition: 'opacity .7s'
+    // animation: `${reveal} 1.5s`
 })
 
 const GlassTitleDiv = glamorous.div({
@@ -52,7 +63,7 @@ class GlassRoof extends Component{
     constructor(){
         super()
         this.state = {
-
+            
         }
         this.handleScroll = this.handleScroll.bind(this)
     }
@@ -62,7 +73,6 @@ class GlassRoof extends Component{
     }
 
     componentDidUpdate(){
-        const {yOffset} = this.props
         AOS.refresh();
     }
 
@@ -73,9 +83,13 @@ class GlassRoof extends Component{
     render(){    
         console.log(this.props.yOffset)
         window.onscroll = this.handleScroll
+        const {yOffset} = this.props
+
+        let roofImg = yOffset <= 2903 ? GlassTop : NoGlassTop
+        
         return(
             <GlassRoofDiv>
-                <GlassTopImg src={GlassTop} alt='glass top car' data-aos='fade-up' data-aos-duration='1000' data-aos-once='false'/>
+                <GlassTopImg src={roofImg} alt='glass top car' data-aos='fade-up' data-aos-duration='1000' data-aos-once='false'/>
                 <GlassTitleDiv>
                     <GlassTitle>
                         Glass Roof
