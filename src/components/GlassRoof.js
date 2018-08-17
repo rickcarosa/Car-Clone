@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import glamorous from 'glamorous';
-import GlassTop from '../images/top@2.jpg'
+import GlassTop from '../images/top@2.jpg';
+import {connect} from 'react-redux';
+import {updateYoffset} from '../ducks/reducer'
 
 const GlassRoofDiv = glamorous.div({
     height: '896px',
@@ -52,6 +54,7 @@ class GlassRoof extends Component{
         this.state = {
 
         }
+        this.handleScroll = this.handleScroll.bind(this)
     }
 
     componentDidMount(){
@@ -59,10 +62,17 @@ class GlassRoof extends Component{
     }
 
     componentDidUpdate(){
+        const {yOffset} = this.props
         AOS.refresh();
     }
 
-    render(){
+    handleScroll(){
+        this.props.updateYoffset(window.pageYOffset)
+    }
+
+    render(){    
+        console.log(this.props.yOffset)
+        window.onscroll = this.handleScroll
         return(
             <GlassRoofDiv>
                 <GlassTopImg src={GlassTop} alt='glass top car' data-aos='fade-up' data-aos-duration='1000' data-aos-once='false'/>
@@ -81,4 +91,10 @@ class GlassRoof extends Component{
     }
 }
 
-export default GlassRoof;
+function mapStateToProps(state){
+    return{
+        yOffset: state.yOffset
+    }
+}
+
+export default connect(mapStateToProps, {updateYoffset}) (GlassRoof);
