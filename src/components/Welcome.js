@@ -375,12 +375,12 @@ const SlideDivTwo = glamorous.span({
     position: 'absolute'
 })
 
-const SlideDivTwoClose = glamorous.span({
-    backgroundColor: 'rgba(0,0,0,0.20)',
-    opacity: '1',
-    width: '100%',
-    height: '100vh'
-})
+// const SlideDivTwoClose = glamorous.span({
+//     backgroundColor: 'rgba(0,0,0,0.20)',
+//     opacity: '1',
+//     width: '100%',
+//     height: '100vh'
+// })
 
 const slide = css.keyframes({
     '0%': {transform: 'translateX(200px)'},
@@ -406,18 +406,18 @@ const SlideMenu = glamorous.ul({
     animation: `${slide} .3s, ${slideClose} 1s alternate`
 })
 
-const SlideMenuClose = glamorous.ul({
-    height: '100vh',
-    width: '160px',
-    backgroundColor: '#fff',
-    opacity: '0.95',
-    zIndex: '2',
-    top: '0',
-    position: 'absolute',
-    right: '-200px',
-    margin: 'auto',
-    animation: `${slideClose} 1s`
-})
+// const SlideMenuClose = glamorous.ul({
+//     height: '100vh',
+//     width: '160px',
+//     backgroundColor: '#fff',
+//     opacity: '0.95',
+//     zIndex: '2',
+//     top: '0',
+//     position: 'absolute',
+//     right: '-200px',
+//     margin: 'auto',
+//     animation: `${slideClose} 1s`
+// })
 
 const MenuContentsDiv = glamorous.div({
     width: '150px',
