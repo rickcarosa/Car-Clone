@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import glamorous from 'glamorous';
-import glamor, {css} from 'glamor';
+// import glamor, {css} from 'glamor';
 import GlassTop from '../images/top@2.jpg';
 import NoGlassTop from '../images/top_2@2.jpg'
 import {connect} from 'react-redux';
-import {updateYoffset} from '../ducks/reducer'
+import {updateYoffset} from '../ducks/reducer';
 
 const GlassRoofDiv = glamorous.div({
     height: '896px',
@@ -81,7 +81,7 @@ class GlassRoof extends Component{
     }
 
     render(){    
-        console.log(this.props.yOffset)
+        // console.log(this.props.yOffset)
         window.onscroll = this.handleScroll
         const {yOffset} = this.props
 

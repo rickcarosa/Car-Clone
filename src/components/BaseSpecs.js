@@ -1,5 +1,5 @@
-import React, { Component } from 'react' 
-import glamorous from 'glamorous'
+import React, { Component } from 'react';
+import glamorous from 'glamorous';
 
 const Styles = glamorous.div({
     height: '57.75rem',
@@ -16,8 +16,15 @@ let VideoDiv = glamorous.div({
 })
 
 class BaseSpecs extends Component {
+    constructor(){
+        super()
+        this.state = {
+
+        }
+    }
+
     render() {
-        console.log('pizza')
+        // console.log('pizza')
         return(
             <Styles>
                 <VideoDiv>
@@ -28,5 +35,5 @@ class BaseSpecs extends Component {
     }
 }
 
-export default BaseSpecs
+export default BaseSpecs;
 
