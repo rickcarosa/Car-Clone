@@ -69,7 +69,8 @@ const ReserveButton = glamorous.button({
     cursor: 'pointer',
     color: '#fff',
     backgroundColor: 'transparent',
-    fontSize: '15px',
+    fontSize: '12px',
+    textTransform: 'uppercase',
     ':hover':{
         color: '#333',
         transition: '.5s',
@@ -87,8 +88,9 @@ const NewsButton = glamorous.button({
     cursor: 'pointer',
     color: '#fff',
     backgroundColor: 'transparent',
-    fontSize: '15px',
+    fontSize: '12px',
     marginTop: '15px',
+    textTransform: 'uppercase',
     ':hover':{
         color: '#333',
         transition: '.5s',

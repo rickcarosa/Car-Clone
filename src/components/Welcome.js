@@ -34,10 +34,10 @@ const NavList = glamorous.ul({
     alignItems: 'center',
     backgroundPosition: 'center',
     fontWeight: '400',
-    fontSize: '12px',
+    fontSize: '13px',
     color: '#222',
     listStyleType: 'none',
-    width: 'calc(100% - 26.5rem)',
+    width: 'calc(100% - 25.5rem)',
     lineHeight: '13px'
 })
 
@@ -190,11 +190,11 @@ const Paragraph = glamorous.p({
     top: '70%',
     lineHeight: '24px',
     fontFamily: '"HeiS ASC Simplified Chinese","HeiS ASC Simplified Chinese_n5","HeiT ASC Traditional Chinese","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;',
-    fontWeight: '300',
+    fontWeight: '100',
     fontSize: '16px',
     color: '#fff',
     textAlign: 'center',
-    opacity: '0.6',
+    opacity: '0.8',
     left: '35%'
 })
 
@@ -344,7 +344,7 @@ const ReserveButton = glamorous.button({
     cursor: 'pointer',
     color: '#fff',
     backgroundColor: 'transparent',
-    fontSize: '15px',
+    fontSize: '12px',
     ':hover':{
         color: '#333',
         transition: '.5s',
@@ -579,7 +579,7 @@ class Welcome extends Component {
                     </MilesRange>
 
                     <ReserveButton> 
-                        Reserve now
+                        RESERVE NOW
                     </ReserveButton>
                 </StatList>
 

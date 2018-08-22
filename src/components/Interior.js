@@ -34,7 +34,7 @@ const Title = glamorous.h1({
 
 const TextDiv = glamorous.div({
     position: 'absolute',
-    marginTop: '34%',
+    marginTop: '33.5%',
     left: '31%',
     width: '26%',
     zIndex: '5'

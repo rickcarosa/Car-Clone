@@ -45,13 +45,13 @@ const GlassTitle = glamorous.h1({
 
 const GlassTextDiv = glamorous.div({
     position: 'absolute',
-    marginTop: '63%',
+    marginTop: '62.5%',
     left: '31%',
-    width: '33%',
+    width: '30%',
 })
 
 const GlassText = glamorous.p({
-    ontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;',
     position: 'absolute',
     color: '#fff',
     fontSize: '16px',
