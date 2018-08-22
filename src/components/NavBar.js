@@ -25,20 +25,20 @@ const ButtonDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    width: '315px'
+    width: '335px'
 })
 
 const ReserveButton = glamorous.button({
     fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
     border: '2px solid white',
     borderRadius: '21px',
-    lineHeight: '22px',
+    lineHeight: '24px',
     color: 'white',
     backgroundColor: 'transparent',
     textAlign: 'center',
     cursor: 'pointer',
     fontWeight: '400',
-    fontSize: '12px',
+    fontSize: '11px',
     marginRight: '1rem',
     width: '150px',
     ':hover':{
@@ -52,13 +52,13 @@ const NewsButton = glamorous.button({
     fontFamily: '"Gotham Medium", "M Hei PRC W45", "M Hei HK W42", "M Hei HK W40", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
     border: '2px solid white',
     borderRadius: '21px',
-    lineHeight: '22px',
+    lineHeight: '24px',
     color: 'white',
     backgroundColor: 'transparent',
     textAlign: 'center',
     cursor: 'pointer',
     fontWeight: '400',
-    fontSize: '12px',
+    fontSize: '11px',
     marginRight: '1rem',
     width: '150px',
     ':hover':{
