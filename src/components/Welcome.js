@@ -46,7 +46,6 @@ const ListContents = glamorous.li({
     ':nth-child(4)':{
         color: 'white',
         opacity: '0.7',
-        // fontFamily: 'Gotham-Medium'
     },
     ':hover':{
         color: 'white',
