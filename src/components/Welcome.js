@@ -34,10 +34,11 @@ const NavList = glamorous.ul({
     alignItems: 'center',
     backgroundPosition: 'center',
     fontWeight: '400',
-    fontSize: '13px',
+    fontSize: '12px',
     color: '#222',
     listStyleType: 'none',
-    width: 'calc(100% - 26.5rem)'
+    width: 'calc(100% - 26.5rem)',
+    lineHeight: '13px'
 })
 
 const ListContents = glamorous.li({
@@ -180,7 +181,8 @@ const TitleTwo = glamorous.h2({
     fontSize: '50px',
     color: '#333333',
     margin: '0',
-    fontWeight: '500'
+    fontWeight: '400',
+    lineHeight: '70px'
 })
 
 const Paragraph = glamorous.p({
