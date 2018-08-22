@@ -44,7 +44,8 @@ const ListContents = glamorous.li({
     margin: '0 10px',
     ':nth-child(4)':{
         color: 'white',
-        opacity: '0.7'
+        opacity: '0.7',
+        // fontFamily: 'Gotham-Medium'
     },
     ':hover':{
         color: 'white',
@@ -468,6 +469,8 @@ class Welcome extends Component {
     render(){
         return(
             <Div height='100vh'>
+
+            {/* <h1 id='stuff'>Stuff!!!!!</h1> */}
                 <BackgroundImg src={background} alt='background'/>
                     <Nav>
                         <Logo/>
