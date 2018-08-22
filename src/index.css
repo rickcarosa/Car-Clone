@@ -1,5 +1,27 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('fonts/Gotham_Medium_Regular.ttf');
+}
+@font-face {
+  font-family: 'Gotham Light';
+  src: url('fonts/Gotham_Light_Regular.otf');
+}
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('fonts/Gotham_Bold.otf');
+}
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('fonts/Gotham_Book_Regular.otf');
+}
+
+/* #stuff {
+  color: white;
+  font-family: 'Gotham-Medium'
+} */
