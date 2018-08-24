@@ -65,7 +65,7 @@ class GlassRoof extends Component{
         this.state = {
             
         }
-        this.handleScroll = this.handleScroll.bind(this)
+        
     }
 
     componentDidMount(){
@@ -76,13 +76,9 @@ class GlassRoof extends Component{
         AOS.refresh();
     }
 
-    handleScroll(){
-        this.props.updateYoffset(window.pageYOffset)
-    }
-
     render(){    
         // console.log(this.props.yOffset)
-        window.onscroll = this.handleScroll
+        
         const {yOffset} = this.props
 
         let roofImg = yOffset <= 2903 ? GlassTop : NoGlassTop

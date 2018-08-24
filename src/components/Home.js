@@ -22,19 +22,25 @@ class Home extends Component {
         this.state = {
             
         }
+        this.handleScroll = this.handleScroll.bind(this)
     }
-    
-    render(){
-        // console.log(this.props.yOffset)
-        // const {yOffset} = this.props
 
-        // let navBar = yOffset >= 636 ? <NavBar/> : null
+    handleScroll(){
+        this.props.updateYoffset(window.pageYOffset)
+    }
+
+    render(){
+        window.onscroll = this.handleScroll
+        // console.log(this.props.yOffset)
+        const {yOffset} = this.props
+
+        let navBar = yOffset >= 636 ? <NavBar/> : null
 
         return(
             <Background>
 
                 <Welcome/>
-                {/* {navBar} */}
+                {navBar}
                 <BaseSpecs/>
                 <Aero/>
                 <Interior/>

@@ -72,15 +72,14 @@ const NewsButton = glamorous.button({
 })
 
 class NavBar extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             toggle: ''
         }
     }
 
     handleChange(){
-        console.log(this.props.yOffset)
         const {yOffset} = this.props
         if(yOffset >= 636){
             this.setState({
@@ -99,7 +98,7 @@ class NavBar extends Component{
 
         return(
             <div className={this.state.toggle}>
-            {/* // <NavBarDiv> */}
+             {/* <NavBarDiv>  */}
                 <LogoTwo/>
                 <ButtonDiv>
                     <ReserveButton>
@@ -110,7 +109,7 @@ class NavBar extends Component{
                     </NewsButton>
                 </ButtonDiv>
                 {/* </NavBarDiv> */}
-            </div>
+             </div>
         )
     }
 }
