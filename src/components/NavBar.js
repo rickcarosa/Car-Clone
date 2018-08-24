@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 import glamorous from 'glamorous';
 import {LogoTwo} from '../images/logo.js';
 import glamor, {css} from 'glamor';
+import './NavBar.css';
+import {connect} from 'react-redux';
+import {updateYoffset} from '../ducks/reducer';
 
-const slideDown = css.keyframes({
-    '0%': {transform: 'translateY(-52px)'},
-    '100%': 'none'
-})
+// const slideDown = css.keyframes({
+//     '0%': {transform: 'translateY(-52px)'},
+//     '100%': 'none'
+// })
 
-const NavBarDiv = glamorous.div({
-    height: '52px',
-    width: '100%',
-    position: 'fixed',
-    zIndex: '500',
-    backgroundColor: 'rgba(34,34,34,0.9)',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    top: '0',
-    animation: `${slideDown} .3s`
-})
+// const NavBarDiv = glamorous.div({
+//     height: '52px',
+//     width: '100%',
+//     position: 'fixed',
+//     zIndex: '500',
+//     backgroundColor: 'rgba(34,34,34,0.9)',
+//     display: 'flex',
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     top: '0',
+//     animation: `${slideDown} .3s`
+// })
 
 const ButtonDiv = glamorous.div({
     display: 'flex',
@@ -72,14 +75,31 @@ class NavBar extends Component{
     constructor(){
         super()
         this.state = {
+            toggle: ''
+        }
+    }
 
+    handleChange(){
+        console.log(this.props.yOffset)
+        const {yOffset} = this.props
+        if(yOffset >= 636){
+            this.setState({
+                toggle: 'NavBarDiv'
+            })
+        }
+        if(yOffset < 636){
+            this.setState({
+                toggle: 'NavBarDivClose'
+            })
         }
     }
     
     render(){
+        console.log(this.props.yOffset)
 
         return(
-            <NavBarDiv>
+            <div className={this.state.toggle}>
+            {/* // <NavBarDiv> */}
                 <LogoTwo/>
                 <ButtonDiv>
                     <ReserveButton>
@@ -89,9 +109,16 @@ class NavBar extends Component{
                         GET NEWSLETTER
                     </NewsButton>
                 </ButtonDiv>
-            </NavBarDiv>
+                {/* </NavBarDiv> */}
+            </div>
         )
     }
 }
 
-export default NavBar;
+function mapStateToProps(state){
+    return{
+        yOffset: state.yOffset
+    }
+}
+
+export default connect(mapStateToProps, {updateYoffset}) (NavBar);

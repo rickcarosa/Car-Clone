@@ -1,0 +1,43 @@
+@keyframes slideDown{
+    0% {
+        transform: translateY(-52px);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes slideUp{
+    0% {
+        transform: translateY(52px);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.NavBarDiv{
+    height: 52px;
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+    background-color: rgba(34,34,34,0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    animation: slideDown .3s
+}
+
+.NavBarDivClose{
+    height: 52px;
+    width: 100%;
+    position: fixed;
+    z-index: 500;
+    background-color: rgba(34,34,34,0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    animation: slideUp .3s
+}

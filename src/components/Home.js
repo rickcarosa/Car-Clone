@@ -25,16 +25,16 @@ class Home extends Component {
     }
     
     render(){
-        console.log(this.props.yOffset)
-        const {yOffset} = this.props
+        // console.log(this.props.yOffset)
+        // const {yOffset} = this.props
 
-        let navBar = yOffset >= 636 ? <NavBar/> : null
+        // let navBar = yOffset >= 636 ? <NavBar/> : null
 
         return(
             <Background>
 
                 <Welcome/>
-                {navBar}
+                {/* {navBar} */}
                 <BaseSpecs/>
                 <Aero/>
                 <Interior/>
