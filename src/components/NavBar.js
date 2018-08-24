@@ -79,19 +79,34 @@ class NavBar extends Component{
         }
     }
 
-    handleChange(){
+    componentDidUpdate(prevProps){
         const {yOffset} = this.props
-        if(yOffset >= 636){
-            this.setState({
-                toggle: 'NavBarDiv'
-            })
-        }
-        if(yOffset < 636){
-            this.setState({
-                toggle: 'NavBarDivClose'
-            })
+        if(prevProps.yOffset !== yOffset){
+            if(yOffset >= 636){
+                this.setState({
+                    toggle: 'NavBarDiv'
+                })
+            }else{
+                this.setState({
+                    toggle: 'NavBarDivClose'
+                })
+            }
         }
     }
+
+    // handleChange(){
+    //     const {yOffset} = this.props
+    //     if(yOffset >= 636){
+    //         this.setState({
+    //             toggle: 'NavBarDiv'
+    //         })
+    //     }
+    //     if(yOffset < 636){
+    //         this.setState({
+    //             toggle: 'NavBarDivClose'
+    //         })
+    //     }
+    // }
     
     render(){
         console.log(this.props.yOffset)
