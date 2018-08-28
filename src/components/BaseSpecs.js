@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import glamorous, {P, Ul, Div} from 'glamorous';
 
 const Styles = glamorous.div({
-    height: '57.75rem',
-    width: '100vw',
+    // height: '100',
+    width: '100%',
     color: 'white',
     fontSize: '50px',
     display: 'flex',
@@ -12,45 +12,55 @@ const Styles = glamorous.div({
 })
 
 let VideoDiv = glamorous.div({
-    padding: '100px',
+    marginTop: '90px',
 })
 
 const BaseSpecsList = glamorous.li({
-    textDecoration: 'none',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    fontSize: '15px',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
+    padding: '16px 0',
+    lineHeight: '20px',
+    ':last-child': {
+        borderBottom: 'none'
+    }
+},({fontFamily}) => ({fontFamily}))
+
+const Book = glamorous.p({
+    fontFamily: 'Gotham Book',
+    margin: 0
+})
+const Medium = glamorous.p({
+    fontFamily: 'Gotham Medium',
+    margin: 0
 })
 
 class BaseSpecs extends Component {
-    constructor(){
-        super()
-        this.state = {
-
-        }
-    }
-
     render() {
         return(
             <Styles>
                 <VideoDiv>
                     <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="" loop muted="" playsinline="" style={{height: '216px', width: 'auto'}}></video>
                 </VideoDiv>
-                <div>Base Specs</div>
-                {/* <ul>
-                    <BaseSpecsList><p>Acceleration 0-60 mph</p><p>1.9 sec</p></BaseSpecsList>
-                    <BaseSpecsList><p>Acceleration 0-100 mph</p><p>4.2 sec</p></BaseSpecsList>
-                    <BaseSpecsList><p>Acceleration 1/4 mile</p><p>8.8 sec</p></BaseSpecsList>
-                    <BaseSpecsList><p>Top Speed</p><p>Over 250 mph</p></BaseSpecsList>
-                    <BaseSpecsList><p>Wheel Torque</p><p>10,000 Nm</p></BaseSpecsList>
-                    <BaseSpecsList><p>Mile Range</p><p>620 miles</p></BaseSpecsList>
-                    <BaseSpecsList><p>Seating</p><p>4</p></BaseSpecsList>
-                    <BaseSpecsList><p>Drive</p><p>All-Wheel Drive</p></BaseSpecsList>
-                    <BaseSpecsList><p>Base Price</p><p>$200,000</p></BaseSpecsList>
-                    <BaseSpecsList><p>Base Reservation</p><p>$50,000</p></BaseSpecsList>
-                    <BaseSpecsList><p>Founders Series Price</p><p>$250,000</p></BaseSpecsList>
-                    <BaseSpecsList><div><p>Founders Series Reservation</p><p>(1,000 reservations available)</p></div><p>$250,000</p></BaseSpecsList>
-                </ul> */}
+                <Div marginTop='90px' width='100%' height='auto' display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
+                    <Ul width='476px' listStyle='none' padding='0' margin='0'>
+                        <BaseSpecsList fontFamily='Gotham Bold'>Base Specs</BaseSpecsList>
+                        <BaseSpecsList><Book>Acceleration 0-60 mph</Book><Medium>1.9 sec</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Acceleration 0-100 mph</Book><Medium>4.2 sec</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Acceleration 1/4 mile</Book><Medium>8.8 sec</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Top Speed</Book><Medium>Over 250 mph</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Wheel Torque</Book><Medium>10,000 Nm</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Mile Range</Book><Medium>620 miles</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Seating</Book><Medium>4</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Drive</Book><Medium>All-Wheel Drive</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Base Price</Book><Medium>$200,000</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Base Reservation</Book><Medium>$50,000</Medium></BaseSpecsList>
+                        <BaseSpecsList><Book>Founders Series Price</Book><Medium>$250,000</Medium></BaseSpecsList>
+                        <BaseSpecsList><div><Book>Founders Series Reservation</Book><P fontFamily='Gotham Light' margin='0' fontSize='13px'>(1,000 reservations available)</P></div><Medium>$250,000</Medium></BaseSpecsList>
+                    </Ul>
+                </Div>
             </Styles>
         ) 
     }
