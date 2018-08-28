@@ -75,22 +75,17 @@ class NavBar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            toggle: ''
+            toggle: 'NavBarDivClose'
         }
     }
 
     componentDidUpdate(prevProps){
         const {yOffset} = this.props
         if(prevProps.yOffset !== yOffset){
-            if(yOffset >= 636){
+            if(yOffset >= 636 && this.state.toggle === 'NavBarDivClose'){
                 console.log(this.state.toggle)
                 this.setState({
                     toggle: 'NavBarDiv'
-                })
-            }else if(yOffset < 636 && this.state.toggle === 'NavBarDiv'){
-                console.log(this.state.toggle)
-                this.setState({
-                    toggle: 'NavBarDivClose'
                 })
             }
         }
