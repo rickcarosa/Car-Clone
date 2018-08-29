@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import glamorous, {P, Ul, Div} from 'glamorous';
 
 const Styles = glamorous.div({
-    // height: '100',
+    height: '1115px',
     width: '100%',
     color: 'white',
     fontSize: '50px',
