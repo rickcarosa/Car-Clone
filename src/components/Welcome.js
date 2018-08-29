@@ -9,7 +9,7 @@ import './Welcome.css';
 
 const BackgroundImg = glamorous.img({
     height: '100vh',
-    width: '100vw',
+    width: '100%',
     backgroundSize: 'cover',
     backgroundPostion: 'center',
     position: 'absolute'
