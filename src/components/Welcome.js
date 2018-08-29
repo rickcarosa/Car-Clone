@@ -4,6 +4,7 @@ import glamor, {css} from 'glamor';
 import background from '../images/roadster-social.jpg';
 import {Logo} from '../images/logo.js';
 import {Speedometer, Shadow, Needle, Arrow} from '../images/stats.js';
+import './Welcome.css';
 
 
 const BackgroundImg = glamorous.img({
@@ -89,15 +90,6 @@ const HamburgerDiv = glamorous.div({
     zIndex: '3', 
     backgroundColor: 'transparent',
     cursor: 'pointer'
-})
-
-const CloseMenuDiv = glamorous.div({
-    height: '20px',
-    width: '18px',
-    backgroundColor: 'red',
-    cursor: 'pointer',
-    position: 'absolute',
-    zIndex: '50'
 })
 
 const Hamburger = glamorous.span({
@@ -364,95 +356,41 @@ const ArrowDiv = glamorous.div({
     animation: `${bounce} 1.5s infinite`
 })
 
-const SlideDiv = glamorous.div({
-    height: '100vh',
-    width: '100%'
-})
-
-const SlideDivTwo = glamorous.span({
-    backgroundColor: 'rgba(0,0,0,0.20)',
-    opacity: '1',
-    width: '100%',
-    height: '100vh',
-    position: 'absolute'
-})
-
-// const SlideDivTwoClose = glamorous.span({
-//     backgroundColor: 'rgba(0,0,0,0.20)',
-//     opacity: '1',
-//     width: '100%',
-//     height: '100vh'
-// })
-
-const slide = css.keyframes({
-    '0%': {transform: 'translateX(200px)'},
-    // '100%': {transform: 'translateX(-200px)'}
-    '100%': 'none'
-})
-
-const slideClose = css.keyframes({
-    '0%': 'none',
-    '100%': {transform: 'translateX(200px)'}
-})
-
-const SlideMenu = glamorous.ul({
-    height: '100vh',
-    width: '160px',
-    backgroundColor: '#fff',
-    opacity: '0.95',
-    zIndex: '2',
-    top: '0',
-    position: 'absolute',
-    right: '0',
-    margin: 'auto',
-    animation: `${slide} .3s, ${slideClose} 1s alternate`
-})
-
-// const SlideMenuClose = glamorous.ul({
-//     height: '100vh',
-//     width: '160px',
-//     backgroundColor: '#fff',
-//     opacity: '0.95',
-//     zIndex: '2',
-//     top: '0',
-//     position: 'absolute',
-//     right: '-200px',
-//     margin: 'auto',
-//     animation: `${slideClose} 1s`
-// })
-
-const MenuContentsDiv = glamorous.div({
-    width: '150px',
-    height: '456px',
-    paddingTop: '35px',
-    marginLeft: '-20px'
-})
-
 const MenuContents = glamorous.li({
     fontFamily: 'Gotham Medium,"M Hei PRC W45","M Hei HK W42","M Hei HK W40","HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif',
     color: '#222',
     listStyleType: 'none',
-    padding: '20px 10px',
+    padding: '22px 10px',
     fontSize: '13px',
     opacity: '1',
     fontWeight: '500',
-    borderBottom: '1px solid #ddd'
+    borderBottom: '1px solid #ddd',
+    cursor: 'pointer'
 })
 
 class Welcome extends Component {
     constructor(){
         super()
         this.state = {
-            menu: 'false',
-            hamburgerX: 'false',
-            closeMenu: 'false'
+            menu: 'SlideMenuClose',
+            second: 'SlideDivTwoClose',
+            hamburgerX: 'false'
         }
     }
 
     handleMenu(){
-        this.setState({
-            menu: !this.state.menu
-        })
+        if(this.state.hamburgerX && this.state.menu === 'SlideMenuClose'){
+            this.setState({
+                menu: 'SlideMenu',
+                second: 'SlideDivTwo'
+               
+            })
+        }else if(!this.state.hamburgerX && this.state.menu === 'SlideMenu'){
+            this.setState({
+                menu: 'SlideMenuClose',
+                second: 'SlideDivTwoClose'
+            })
+        }
     }
 
     handleHamburgerX(){
@@ -461,17 +399,10 @@ class Welcome extends Component {
         })
     }
 
-    handleCloseMenu(){
-        this.setState({
-            closeMenu: !this.state.closeMenu
-        })
-    }
-
     render(){
+        let showHamburgerX = !this.state.hamburgerX ? <HamburgerX/> : <Hamburger/>
         return(
             <Div height='100vh'>
-
-            {/* <h1 id='stuff'>Stuff!!!!!</h1> */}
                 <BackgroundImg src={background} alt='background'/>
                     <Nav>
                         <Logo/>
@@ -485,24 +416,19 @@ class Welcome extends Component {
                                 <ListContentsTwo> SHOP </ListContentsTwo>
                                 <ListContentsTwo> SIGN IN </ListContentsTwo>
                                 <ListSectionThree>
-                                    <HamburgerDiv onClick={() => {this.handleMenu(); this.handleHamburgerX(); this.handleCloseMenu()}}>
-                                        {this.state.menu && <Hamburger/>}
-                                        {!this.state.closeMenu && <CloseMenuDiv  onClick={() => {this.handleCloseMenu()}}> <HamburgerX/> </CloseMenuDiv>}
+                                    <HamburgerDiv onClick={() => {this.handleHamburgerX();this.handleMenu()}}>
+                                        {showHamburgerX}
                                     </HamburgerDiv>
                                 </ListSectionThree>
                             </ListSectionTwo>
                         </NavList>
                     </Nav>
 
-                { 
-                    !this.state.menu 
-                    
-                    &&
-
-                    <SlideDiv>
-                        <SlideDivTwo>
-                            <SlideMenu>
-                                    <MenuContentsDiv>
+                     {/* slide menu */}
+                    <section className='SlideDiv'>
+                        <div className={this.state.second}>
+                            <div className={`ThirdDiv ${this.state.menu}`}>  
+                                    <div className='MenuContentsDiv'>
                                         <MenuContents> NEWS </MenuContents>
                                         <MenuContents> NEW INVENTORY </MenuContents>
                                         <MenuContents> USED INVENTORY </MenuContents>
@@ -511,34 +437,10 @@ class Welcome extends Component {
                                         <MenuContents> SEMI </MenuContents>
                                         <MenuContents> CARBON IMPACT </MenuContents>
                                         <MenuContents> SUPPORT </MenuContents>
-                                    </MenuContentsDiv>
-                            </SlideMenu>
-                        </SlideDivTwo>
-                    </SlideDiv>
-                } 
-
-                {/* {
-                    !this.state.closeMenu
-
-                    &&
-
-                    <SlideDiv>
-                        <SlideDivTwoClose> 
-                                <SlideMenuClose>
-                                    <MenuContentsDiv>
-                                        <MenuContents> NEWS </MenuContents>
-                                        <MenuContents> NEW INVENTORY </MenuContents>
-                                        <MenuContents> USED INVENTORY </MenuContents>
-                                        <MenuContents> CHARGING </MenuContents>
-                                        <MenuContents> FIND US </MenuContents>
-                                        <MenuContents> SEMI </MenuContents>
-                                        <MenuContents> CARBON IMPACT </MenuContents>
-                                        <MenuContents> SUPPORT </MenuContents>
-                                    </MenuContentsDiv>
-                                </SlideMenuClose>
-                            </SlideDivTwoClose>
-                    </SlideDiv>
-                } */}
+                                    </div>
+                            </div>
+                        </div>
+                    </section>
 
                 <Header> 
                     <Title> Tesla </Title>
