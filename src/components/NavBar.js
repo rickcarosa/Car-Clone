@@ -6,23 +6,6 @@ import './NavBar.css';
 import {connect} from 'react-redux';
 import {updateYoffset} from '../ducks/reducer';
 
-// const slideDown = css.keyframes({
-//     '0%': {transform: 'translateY(-52px)'},
-//     '100%': 'none'
-// })
-
-// const NavBarDiv = glamorous.div({
-//     height: '52px',
-//     width: '100%',
-//     position: 'fixed',
-//     zIndex: '500',
-//     backgroundColor: 'rgba(34,34,34,0.9)',
-//     display: 'flex',
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     top: '0',
-//     animation: `${slideDown} .3s`
-// })
 
 const ButtonDiv = glamorous.div({
     display: 'flex',
@@ -94,27 +77,12 @@ class NavBar extends Component{
             }
         }
     }
-
-    // handleChange(){
-    //     const {yOffset} = this.props
-    //     if(yOffset >= 636){
-    //         this.setState({
-    //             toggle: 'NavBarDiv'
-    //         })
-    //     }
-    //     if(yOffset < 636){
-    //         this.setState({
-    //             toggle: 'NavBarDivClose'
-    //         })
-    //     }
-    // }
     
     render(){
         console.log(this.props.yOffset)
 
         return(
             <div className={`MainNav ${this.state.toggle}`}>
-             {/* <NavBarDiv>  */}
                 <LogoTwo/>
                 <ButtonDiv>
                     <ReserveButton>
@@ -124,7 +92,6 @@ class NavBar extends Component{
                         GET NEWSLETTER
                     </NewsButton>
                 </ButtonDiv>
-                {/* </NavBarDiv> */}
              </div>
         )
     }
