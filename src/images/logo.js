@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Logo = () => (
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg11038" viewBox="0 0 1236.0087     161.13015" height="45.47451mm" width="348.82913mm" style={{'width': '6rem', 'margin-left':'20px'}}>
+<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg11038" viewBox="0 0 1236.0087     161.13015" height="45.47451mm" width="348.82913mm" style={{'width': '6rem', 'margin-left':'20px', 'cursor':'pointer'}}>
   
     <g transform="translate(858.00438,-193.12212)" id="layer1">
     <g id="g11594">

@@ -9,7 +9,8 @@ const AeroDiv = glamorous.div({
     height: '46.875rem',
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '-14rem'
 })
 
 const BackViewImg = glamorous.img({
