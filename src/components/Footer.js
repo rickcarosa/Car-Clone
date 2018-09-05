@@ -8,7 +8,10 @@ const FooterDiv = glamorous.div({
     width: 'auto',
     padding: '0 20px',
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    '@media(max-width: 930px)': {
+        padding: '0'
+    }
 })
 
 const FooterNav = glamorous.ul({
