@@ -8,7 +8,10 @@ const VideoDiv = glamorous.div({
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '5rem'
+    marginTop: '5rem',
+    '@media(max-width: 930px)': {
+        height: '890px'
+    }
 })
 
 const PlayerDiv = glamorous.div({
@@ -25,7 +28,10 @@ const TextDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'center',
     position: 'absolute',
-    marginTop: '36rem'
+    marginTop: '36rem',
+    '@media(max-width: 930px)': {
+        marginTop: '34rem'
+    }
 })
 
 const UnveilDate = glamorous.p({
@@ -46,6 +52,9 @@ const LineDiv = glamorous.div({
         content: `''`,
         position: 'absolute',
         backgroundColor: 'gray'
+    },
+    '@media(max-width: 930px)': {
+        marginTop: '38.5rem'
     }
 })
 
@@ -56,7 +65,10 @@ const ButtonDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    marginTop: '48.5rem'
+    marginTop: '48.5rem',
+    '@media(max-width: 930px)': {
+        marginTop: '46.5rem'
+    }
 })
 
 const ReserveButton = glamorous.button({
