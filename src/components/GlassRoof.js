@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import glamorous from 'glamorous';
-// import glamor, {css} from 'glamor';
 import GlassTop from '../images/top@2.jpg';
 import NoGlassTop from '../images/top_2@2.jpg'
 import {connect} from 'react-redux';
@@ -16,23 +15,21 @@ const GlassRoofDiv = glamorous.div({
     marginTop: '-5rem'
 })
 
-// const reveal = css.keyframes({
-//     '0%': {opacity: '0'},
-//     '50%': {opacity: '1'},
-//     '100%': {opacity: '0'}
-// })
-
 const GlassTopImg = glamorous.img({
     height: '896px',
     opacity: '0',
     transition: 'opacity .7s'
-    // animation: `${reveal} 1.5s`
 })
 
 const GlassTitleDiv = glamorous.div({
     position: 'absolute',
     marginTop: '60%',
     left: '31%',
+    height: '3rem',
+    '@media(max-width: 930px)': {
+        marginTop: '81%',
+        left: '25%'
+    }
 })
 
 const GlassTitle = glamorous.h1({
@@ -48,6 +45,12 @@ const GlassTextDiv = glamorous.div({
     marginTop: '62.5%',
     left: '31%',
     width: '30%',
+    height: '6rem',
+    '@media(max-width: 930px)': {
+        left: '25%',
+        marginTop: '84%',
+        width: '39%'
+    }
 })
 
 const GlassText = glamorous.p({
