@@ -21,7 +21,12 @@ const TitleDiv = glamorous.div({
     position: 'absolute',
     marginTop: '31%',
     left: '31%',
-    zIndex: '5'
+    zIndex: '5',
+    height: '3rem',
+    '@media(max-width: 930px)': {
+        left: '25%',
+        marginTop: '42%'
+    }
 })
 
 const Title = glamorous.h1({
@@ -37,7 +42,13 @@ const TextDiv = glamorous.div({
     marginTop: '33.5%',
     left: '31%',
     width: '26%',
-    zIndex: '5'
+    zIndex: '5',
+    height: '5.5rem',
+    '@media(max-width: 930px)': {
+        left: '25%',
+        marginTop: '45%',
+        width: '31%'
+    }
 })
 
 const Text = glamorous.p({
