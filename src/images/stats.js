@@ -22,7 +22,7 @@ export const Needle = () => (
 )
 
 export const Arrow = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 35" style={{'position': 'absolute', 'margin-top': '15rem', 'transform': 'scale(.017)', 'padding-left': '3px', 'cursor': 'pointer'}}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 35">
     
     <path fill="none" stroke="#fff" stroke-width="7" stroke-miterlimit="10" d="M2.7 3.4L29.9 30 57 3.4"/></svg>
 )
