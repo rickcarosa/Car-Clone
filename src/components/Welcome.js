@@ -39,7 +39,11 @@ const NavList = glamorous.ul({
     color: '#222',
     listStyleType: 'none',
     width: 'calc(100% - 25.5rem)',
-    lineHeight: '13px'
+    lineHeight: '13px',
+    '@media(max-width: 930px)': {
+        fontSize: '12px',
+        width: 'calc(100% - 17.5rem)'
+    }
 })
 
 const ListContents = glamorous.li({
@@ -62,7 +66,10 @@ const ListSectionTwo = glamorous.li({
     alignContent: 'center',
     alignItems: 'center',
     backgroundPosition: 'center',
-    paddingLeft: '15rem'
+    paddingLeft: '15rem',
+    '@media(max-width: 930px)': {
+        paddingLeft: '5rem'
+    }
 })
 
 const ListContentsTwo = glamorous.li({
@@ -187,7 +194,12 @@ const Paragraph = glamorous.p({
     color: '#fff',
     textAlign: 'center',
     opacity: '0.8',
-    left: '35%'
+    left: '35%',
+    '@media(max-width: 930px)': {
+        top: '72%',
+        lineHeight: '26px',
+        left: '30%'
+    }
 })
 
 const StatList = glamorous.ul({
@@ -197,7 +209,11 @@ const StatList = glamorous.ul({
     width: '49.5rem',
     listStyleType: 'none',
     left: '18%',
-    margin: '0'
+    margin: '0',
+    '@media(max-width: 930px)': {
+        top: '86%',
+        left: '8%'
+    }
 })
 
 const Seconds = glamorous.li({
@@ -353,7 +369,17 @@ const bounce = css.keyframes({
 })
 
 const ArrowDiv = glamorous.div({
-    animation: `${bounce} 1.5s infinite`
+    width: '20px',
+    height: '20px',
+    position: 'absolute',
+    marginTop: '37rem',
+    left: '49.3%',
+    cursor: 'pointer',
+    animation: `${bounce} 1.5s infinite`,
+    '@media(max-width: 930px)': {
+        marginTop: '37.5rem',
+        left: '49.7%',
+    }
 })
 
 const MenuContents = glamorous.li({
