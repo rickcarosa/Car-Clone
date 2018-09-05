@@ -21,9 +21,15 @@ const BackViewImg = glamorous.img({
 const HeadingDiv = glamorous.div({
     position: 'absolute',
     width: '30%',
+    height: '7rem',
     marginTop: '42%',
     left: '31%',
-    lineHeight: '1'
+    lineHeight: '1',
+    '@media(max-width: 930px)': {
+        left: '25%',
+        marginTop: '57%',
+        width: '40%'
+    }
 })
 
 const Heading = glamorous.h1({
@@ -37,9 +43,15 @@ const Heading = glamorous.h1({
 const AeroParagraph = glamorous.div({
     position: 'absolute',
     width: '31%',
+    height: '7rem',
     left: '31%',
     marginTop: '48%',
-    lineHeight: '24px'
+    lineHeight: '24px',
+    '@media(max-width: 930px)': {
+        width: '42%',
+        left: '25%',
+        marginTop: '65%'
+    }
 })
 
 const Paragraph = glamorous.p({
