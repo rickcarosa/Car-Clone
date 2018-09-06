@@ -20,15 +20,15 @@ const BackViewImg = glamorous.img({
 
 const HeadingDiv = glamorous.div({
     position: 'absolute',
-    width: '30%',
-    height: '7rem',
-    marginTop: '42%',
+    width: '440px',
+    height: '5rem',
+    marginTop: '43%',
     left: '31%',
     lineHeight: '1',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1000px)': {
         left: '25%',
         marginTop: '57%',
-        width: '40%'
+        
     }
 })
 
@@ -37,20 +37,21 @@ const Heading = glamorous.h1({
     position: 'absolute',
     color: '#fff',
     fontSize: '28px',
-    fontWeight: '400'
+    fontWeight: '400',
+    width: '85%'
 })
 
 const AeroParagraph = glamorous.div({
     position: 'absolute',
-    width: '31%',
+    width: '440px',
     height: '7rem',
     left: '31%',
-    marginTop: '48%',
+    marginTop: '49%',
     lineHeight: '24px',
-    '@media(max-width: 930px)': {
-        width: '42%',
+    '@media(min-width: 930px) and (max-width: 1000px)': {
         left: '25%',
-        marginTop: '65%'
+        marginTop: '65%',
+        
     }
 })
 
@@ -59,7 +60,8 @@ const Paragraph = glamorous.p({
     position: 'absolute',
     color: '#fff',
     fontSize: '16px',
-    fontWeight: '300'
+    fontWeight: '300',
+    width: '87%'
 })
 
 class Aero extends Component {
