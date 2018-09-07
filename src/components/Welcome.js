@@ -40,9 +40,21 @@ const NavList = glamorous.ul({
     listStyleType: 'none',
     width: 'calc(100% - 25.5rem)',
     lineHeight: '13px',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         fontSize: '12px',
         width: 'calc(100% - 17.5rem)'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        fontSize: '12px',
+        width: 'calc(100% - 19.5rem)'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        fontSize: '12px',
+        width: 'calc(100% - 21.5rem)'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        fontSize: '12px',
+        width: 'calc(100% - 23.5rem)'
     }
 })
 
@@ -67,8 +79,17 @@ const ListSectionTwo = glamorous.li({
     alignItems: 'center',
     backgroundPosition: 'center',
     paddingLeft: '15rem',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         paddingLeft: '5rem'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        paddingLeft: '9rem'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        paddingLeft: '11rem'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        paddingLeft: '12rem'
     }
 })
 
@@ -195,10 +216,17 @@ const Paragraph = glamorous.p({
     textAlign: 'center',
     opacity: '0.8',
     left: '35%',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px)': {
         top: '72%',
         lineHeight: '26px',
         left: '30%'
+    },
+    '@media(min-width: 1080px)': {
+        left: '33%'
+    },
+    '@media(min-width: 1240px)': {
+        left: '35%',
+        top: '70%',
     }
 })
 
@@ -210,9 +238,20 @@ const StatList = glamorous.ul({
     listStyleType: 'none',
     left: '18%',
     margin: '0',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         top: '86%',
         left: '8%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        top: '86%',
+        left: '11.7%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        top: '86%',
+        left: '13.7%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '14.7%'
     }
 })
 
@@ -376,9 +415,16 @@ const ArrowDiv = glamorous.div({
     left: '49.3%',
     cursor: 'pointer',
     animation: `${bounce} 1.5s infinite`,
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px)': {
         marginTop: '37.5rem',
         left: '49.7%',
+    },
+    '@media(min-width: 1130px)': {
+        marginTop: '37rem',
+        left: '49%',
+    },
+    '@media(min-width: 1240px)': {
+        left: '49.3%',
     }
 })
 
