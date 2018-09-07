@@ -25,10 +25,21 @@ const HeadingDiv = glamorous.div({
     marginTop: '43%',
     left: '31%',
     lineHeight: '1',
-    '@media(min-width: 930px) and (max-width: 1000px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '57%',
-        
+        marginTop: '57%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '52%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '49%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '47%'
     }
 })
 
@@ -48,10 +59,21 @@ const AeroParagraph = glamorous.div({
     left: '31%',
     marginTop: '49%',
     lineHeight: '24px',
-    '@media(min-width: 930px) and (max-width: 1000px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '65%',
-        
+        marginTop: '65%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '59%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '56%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '53%'
     }
 })
 
