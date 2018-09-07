@@ -23,12 +23,25 @@ const GlassTopImg = glamorous.img({
 
 const GlassTitleDiv = glamorous.div({
     position: 'absolute',
-    marginTop: '60%',
+    marginTop: '61%',
     left: '31%',
     height: '3rem',
-    '@media(max-width: 930px)': {
-        marginTop: '81%',
-        left: '25%'
+    width: '130px',
+    '@media(min-width: 930px) and (max-width: 1023px)': {
+        left: '25%',
+        marginTop: '82%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '74%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '70%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '67%'
     }
 })
 
@@ -42,14 +55,25 @@ const GlassTitle = glamorous.h1({
 
 const GlassTextDiv = glamorous.div({
     position: 'absolute',
-    marginTop: '62.5%',
+    marginTop: '63.5%',
     left: '31%',
-    width: '30%',
     height: '6rem',
-    '@media(max-width: 930px)': {
+    width: '370px',
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '84%',
-        width: '39%'
+        marginTop: '85%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '77%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '73%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '70%'
     }
 })
 
