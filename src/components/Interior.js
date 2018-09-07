@@ -23,9 +23,22 @@ const TitleDiv = glamorous.div({
     left: '31%',
     zIndex: '5',
     height: '3rem',
-    '@media(max-width: 930px)': {
+    width: '90px',
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '42%'
+        marginTop: '41.5%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '37.5%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '35.5%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '34.5%'
     }
 })
 
@@ -41,13 +54,24 @@ const TextDiv = glamorous.div({
     position: 'absolute',
     marginTop: '33.5%',
     left: '31%',
-    width: '26%',
+    width: '300px',
     zIndex: '5',
     height: '5.5rem',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '45%',
-        width: '31%'
+        marginTop: '41.5%'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        left: '27%',
+        marginTop: '40.5%'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
+        left: '28%',
+        marginTop: '38.5%'
+    },
+    '@media(min-width: 1130px) and (max-width: 1239px)': {
+        left: '29%',
+        marginTop: '37.5%'
     }
 })
 
@@ -57,7 +81,8 @@ const Text = glamorous.p({
     color: '#fff',
     fontSize: '16px',
     fontWeight: '300',
-    lineHeight: '23px'
+    lineHeight: '23px',
+    width: '96%'
 })
 
 class Interior extends Component {
