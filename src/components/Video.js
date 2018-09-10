@@ -9,9 +9,19 @@ const VideoDiv = glamorous.div({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '5rem',
-    '@media(max-width: 930px)': {
-        height: '890px'
-    }
+    '@media(min-width: 930px) and (max-width: 1023px)': {
+        height: '890px',
+        marginTop: '3rem'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        marginTop: '4rem'
+    },
+    // '@media(min-width: 1080px) and (max-width: 1129px)': {
+        
+    // },
+    // '@media(min-width: 1130px) and (max-width: 1239px)': {
+        
+    // }
 })
 
 const PlayerDiv = glamorous.div({
@@ -29,7 +39,7 @@ const TextDiv = glamorous.div({
     justifyContent: 'center',
     position: 'absolute',
     marginTop: '36rem',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         marginTop: '34rem'
     }
 })
@@ -53,7 +63,7 @@ const LineDiv = glamorous.div({
         position: 'absolute',
         backgroundColor: 'gray'
     },
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         marginTop: '38.5rem'
     }
 })
@@ -66,7 +76,7 @@ const ButtonDiv = glamorous.div({
     justifyContent: 'center',
     flexDirection: 'column',
     marginTop: '48.5rem',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
         marginTop: '46.5rem'
     }
 })
