@@ -3,8 +3,10 @@ import glamorous, {Div, Sub} from 'glamorous';
 import glamor, {css} from 'glamor';
 import background from '../images/roadster-social.jpg';
 import {Logo} from '../images/logo.js';
-import {Speedometer, Shadow, Needle, Arrow} from '../images/stats.js';
+import {Speedometer, Secs, SecsTwo, Shadow, Needle, Arrow} from '../images/stats.js';
 import './Welcome.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const BackgroundImg = glamorous.img({
@@ -273,18 +275,38 @@ const TopSectionOne = glamorous.div({
 })
 
 const SpeedSec = glamorous.span({
-    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
-    fontWeight: '400',
-    fontSize: '70px',
-    color: '#fff',
+    // fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    // fontWeight: '400',
+    // fontSize: '70px',
+    // color: '#fff',
     position: 'absolute',
-    top: '-16px',
-    display: 'inline-flex'
+    // top: '-16px',
+    // display: 'inline-flex',
+    overflow: 'hidden',
+    height: '4rem',
+    left: '6rem'
+})
+
+const SpeedSecTwo = glamorous.span({
+    position: 'absolute',
+    overflow: 'hidden',
+    height: '4rem',
+    left: '10rem'
+})
+
+const Dot = glamorous.span({
+    fontFamily: '"HeiS ASC Simplified Chinese", "HeiS ASC Simplified Chinese_n5", "HeiT ASC Traditional Chinese", HelveticaNeue-Regular, "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    position: 'absolute',
+    left: '9.5rem',
+    top: '1.4rem',
+    transform: 'scale(4)'
 })
 
 const LittleS = glamorous.span({
     fontSize: '46px',
-    paddingTop: '15px'
+    position: 'absolute',
+    top: '0',
+    left: '13.5rem'
 })
 
 const BottomSectionOne = glamorous.div({
@@ -400,7 +422,7 @@ const ReserveButton = glamorous.button({
 })
 
 const bounce = css.keyframes({
-    '0%': 'none',
+    '0%': 'none', 
     '50%': 'none',
     '100%': {transform: `translateY(0)`},
     '10%': {transform: `translateY(-7px)`},
@@ -414,7 +436,7 @@ const ArrowDiv = glamorous.div({
     marginTop: '37rem',
     left: '49.3%',
     cursor: 'pointer',
-    animation: `${bounce} 1.5s infinite`,
+    animation: `${bounce} 1.5s infinite`, 
     '@media(min-width: 930px)': {
         marginTop: '37.5rem',
         left: '49.7%',
@@ -448,6 +470,13 @@ class Welcome extends Component {
             second: 'SlideDivTwoClose',
             hamburgerX: 'false'
         }
+    }
+    componentDidMount(){
+        AOS.init();
+    }
+
+    componentDidUpdate(){
+        AOS.refresh();
     }
 
     handleMenu(){
@@ -515,26 +544,30 @@ class Welcome extends Component {
                     </section>
 
                 <Header> 
-                    <Title> Tesla </Title>
-                    <TitleTwo> Roadster </TitleTwo>
+                    <Title data-aos='fade-up' data-aos-duration='200' data-aos-once='false'> Tesla </Title>
+                    <TitleTwo data-aos='fade-up' data-aos-duration='400' data-aos-once='false'> Roadster </TitleTwo>
                 </Header>
 
-                <Paragraph> The quickest car in the world, with record-setting acceleration, range and performance. </Paragraph>
+                <Paragraph data-aos='fade-up' data-aos-duration='1000' data-aos-once='false'> The quickest car in the world, with record-setting acceleration, range and performance. </Paragraph>
 
                 <StatList>
-                    <Seconds>
+                    <Seconds data-aos='fade-zoom-in' data-aos-delay='250' data-aos-easing='ease-in' data-aos-offset='0'>
                         <TopSectionOne>
                             <Speedometer/>
                             <Shadow/>
                             <Needle/>
                                 <SpeedSec>
-                                    1.9 <LittleS> <Sub> s </Sub> </LittleS>
+                                    <Secs/> 
                                 </SpeedSec>
+                                    <Dot> . </Dot>
+                                <SpeedSecTwo>
+                                    <SecsTwo/> 
+                                </SpeedSecTwo> <LittleS> <Sub> s </Sub> </LittleS>
                         </TopSectionOne>
                         <BottomSectionOne> 0-60 mph </BottomSectionOne>
                     </Seconds>
 
-                    <MilesPerHour>
+                    <MilesPerHour data-aos='fade-zoom-in' data-aos-delay='450' data-aos-easing='ease-in' data-aos-offset='0'>
                             <TopSectionTwo>
                                 <Plus> <Sub> + </Sub> </Plus> <Number> 250 </Number> <Sub margin-left='3.3rem'
                                                                                           position='absolute' 
@@ -545,19 +578,19 @@ class Welcome extends Component {
                             <BottomSectionTwo> Top Speed </BottomSectionTwo>
                     </MilesPerHour>
 
-                    <MilesRange>
+                    <MilesRange data-aos='fade-zoom-in' data-aos-delay='650' data-aos-easing='ease-in' data-aos-offset='0'>
                         <TopSectionThree>
                             <Miles> 620 </Miles> <MilesSub> <Sub> mi </Sub> </MilesSub>
                         </TopSectionThree>
                         <BottomSectionThree> Miles Range </BottomSectionThree>
                     </MilesRange>
 
-                    <ReserveButton> 
+                    <ReserveButton data-aos='fade-zoom-in' data-aos-delay='800' data-aos-easing='ease-in' data-aos-offset='0'> 
                         RESERVE NOW
                     </ReserveButton>
                 </StatList>
 
-                <ArrowDiv>
+                <ArrowDiv data-aos='fade-zoom-in' data-aos-delay='1500' data-aos-easing='ease-in' data-aos-offset='0'>
                     <Arrow/>
                 </ArrowDiv>
             </Div>
