@@ -59,7 +59,7 @@ const TextDiv = glamorous.div({
     height: '5.5rem',
     '@media(min-width: 930px) and (max-width: 1023px)': {
         left: '25%',
-        marginTop: '41.5%'
+        marginTop: '44.5%'
     },
     '@media(min-width: 1024px) and (max-width: 1079px)': {
         left: '27%',

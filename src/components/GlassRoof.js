@@ -18,7 +18,8 @@ const GlassRoofDiv = glamorous.div({
 const GlassTopImg = glamorous.img({
     height: '896px',
     opacity: '0',
-    transition: 'opacity .7s'
+    transition: 'opacity .7s',
+    width: '100%'
 })
 
 const GlassTitleDiv = glamorous.div({

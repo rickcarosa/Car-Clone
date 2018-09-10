@@ -9,7 +9,13 @@ const FooterDiv = glamorous.div({
     padding: '0 20px',
     marginLeft: 'auto',
     marginRight: 'auto',
-    '@media(max-width: 930px)': {
+    '@media(min-width: 930px) and (max-width: 1023px)': {
+        padding: '0'
+    },
+    '@media(min-width: 1024px) and (max-width: 1079px)': {
+        padding: '0'
+    },
+    '@media(min-width: 1080px) and (max-width: 1129px)': {
         padding: '0'
     }
 })
