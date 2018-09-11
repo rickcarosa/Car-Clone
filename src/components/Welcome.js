@@ -500,13 +500,20 @@ class Welcome extends Component {
         })
     }
 
+    scrollDown(){
+        window.scrollTo({
+            top: 635,
+            behavior: 'smooth'
+        })
+    }
+
     render(){
         let showHamburgerX = !this.state.hamburgerX ? <HamburgerX/> : <Hamburger/>
         return(
             <Div height='100vh'>
                 <BackgroundImg src={background} alt='background'/>
                     <Nav>
-                        <Logo/>
+                        <a href='/'> <Logo/> </a>
                         <NavList>
                             <ListContents> MODEL S </ListContents>
                             <ListContents> MODEL X </ListContents>
@@ -590,7 +597,7 @@ class Welcome extends Component {
                     </ReserveButton>
                 </StatList>
 
-                <ArrowDiv data-aos='fade-zoom-in' data-aos-delay='1500' data-aos-easing='ease-in' data-aos-offset='0'>
+                <ArrowDiv data-aos='fade-zoom-in' data-aos-delay='1500' data-aos-easing='ease-in' data-aos-offset='0' onClick={() => this.scrollDown()}>
                     <Arrow/>
                 </ArrowDiv>
             </Div>

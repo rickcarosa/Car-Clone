@@ -14,7 +14,7 @@ export const Logo = () => (
 )
 
 export const LogoTwo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg11038" viewBox="0 0 1236.0087     161.13015" width="348.82913mm" style={{'width': '6rem', 'margin-left':'20px'}}>
+  <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg11038" viewBox="0 0 1236.0087     161.13015" width="348.82913mm" style={{'width': '6rem', 'margin-left':'20px', 'cursor':'pointer', 'margin-top': '1.2rem'}}>
   
     <g transform="translate(858.00438,-193.12212)" id="layer1">
     <g id="g11594">

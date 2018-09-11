@@ -83,7 +83,7 @@ class NavBar extends Component{
 
         return(
             <div className={`MainNav ${this.state.toggle}`}>
-                <LogoTwo/>
+                <a href='/'> <LogoTwo/> </a>
                 <ButtonDiv>
                     <ReserveButton>
                         RESERVE NOW
