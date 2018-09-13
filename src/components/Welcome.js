@@ -279,9 +279,9 @@ const SpeedSec = glamorous.span({
     // fontWeight: '400',
     // fontSize: '70px',
     // color: '#fff',
-    position: 'absolute',
     // top: '-16px',
     // display: 'inline-flex',
+    position: 'absolute',
     overflow: 'hidden',
     height: '4rem',
     left: '6rem'
