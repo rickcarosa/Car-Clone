@@ -66,7 +66,7 @@ class NavBar extends Component{
         const {yOffset} = this.props
         if(prevProps.yOffset !== yOffset){
             if(yOffset >= 636 && this.state.toggle !== 'NavBarDiv'){
-                console.log(this.state.toggle)
+                // console.log(this.state.toggle)
                 this.setState({
                     toggle: 'NavBarDiv'
                 })
@@ -79,7 +79,7 @@ class NavBar extends Component{
     }
     
     render(){
-        console.log(this.props.yOffset)
+        // console.log(this.props.yOffset)
 
         return(
             <div className={`MainNav ${this.state.toggle}`}>
