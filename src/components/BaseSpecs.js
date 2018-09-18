@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import glamorous, {P, Ul, Div} from 'glamorous';
 import ReactPlayer from 'react-player';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Styles = glamorous.div({
     height: '1115px',
@@ -39,12 +41,30 @@ const Medium = glamorous.p({
 })
 
 class BaseSpecs extends Component {
+    constructor(){
+        super()
+        this.state ={
+
+        }
+    }
+
+    componentDidMount(){
+        AOS.init();
+    }
+
+    componentDidUpdate(){
+        AOS.refresh();
+    }
+
     render() {
         return(
             <Styles>
                 <VideoDiv>
                     {/* <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="autoplay" loop="" muted="" playsinline="" style={{height: '216px', width: 'auto'}}></video> */}
-                    <ReactPlayer
+                    <ReactPlayer 
+                        data-aos='fade-up' 
+                        data-aos-duration='1000' 
+                        data-aos-once='false'
                         url='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329'
                         height='216px'
                         width='auto'
