@@ -74,13 +74,14 @@ const ListContents = glamorous.li({
     }
 })
 
-const ListSectionTwo = glamorous.li({
+const ListSectionTwo = glamorous.ul({
     display: 'flex',
     flexDirection: 'row',
     alignContent: 'center',
     alignItems: 'center',
     backgroundPosition: 'center',
     paddingLeft: '15rem',
+    listStyleType: 'none',
     '@media(min-width: 930px) and (max-width: 1023px)': {
         paddingLeft: '5rem'
     },
@@ -576,10 +577,10 @@ class Welcome extends Component {
 
                     <MilesPerHour data-aos='fade-zoom-in' data-aos-delay='450' data-aos-easing='ease-in' data-aos-offset='0'>
                             <TopSectionTwo>
-                                <Plus> <Sub> + </Sub> </Plus> <Number> 250 </Number> <Sub margin-left='3.3rem'
+                                <Plus> <Sub> + </Sub> </Plus> <Number> 250 </Number> <Sub marginLeft='3.3rem'
                                                                                           position='absolute' 
-                                                                                          margin-top='-26px'
-                                                                                          font-size='19px'> mph 
+                                                                                          marginTop='-26px'
+                                                                                          fontSize='19px'> mph 
                                                                                      </Sub>
                             </TopSectionTwo>
                             <BottomSectionTwo> Top Speed </BottomSectionTwo>
