@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import glamorous, {P, Ul, Div} from 'glamorous';
+import ReactPlayer from 'react-player';
 
 const Styles = glamorous.div({
     height: '1115px',
@@ -42,7 +43,16 @@ class BaseSpecs extends Component {
         return(
             <Styles>
                 <VideoDiv>
-                    <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="autoplay" loop="" muted="" playsinline="" style={{height: '216px', width: 'auto'}}></video>
+                    {/* <video src='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329' autoplay="autoplay" loop="" muted="" playsinline="" style={{height: '216px', width: 'auto'}}></video> */}
+                    <ReactPlayer
+                        url='https://www.tesla.com/ns_videos/roadster_videos/roadster-loop-imperial.mp4?20180329'
+                        height='216px'
+                        width='auto'
+                        loop
+                        muted
+                        playing
+                        playsinline
+                    />
                 </VideoDiv>
                 <Div marginTop='90px' width='100%' height='auto' display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
                     <Ul width='476px' listStyle='none' padding='0' margin='0' zIndex='5'>
