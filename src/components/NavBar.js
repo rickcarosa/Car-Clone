@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 import {LogoTwo} from '../images/logo.js';
-import glamor, {css} from 'glamor';
 import './NavBar.css';
 import {connect} from 'react-redux';
 import {updateYoffset} from '../ducks/reducer';

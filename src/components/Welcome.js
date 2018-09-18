@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import glamorous, {Div, Sub} from 'glamorous';
-import glamor, {css} from 'glamor';
+import {css} from 'glamor';
 import background from '../images/roadster-social.jpg';
 import {Logo} from '../images/logo.js';
 import {Speedometer, Secs, SecsTwo, Shadow, Needle, Arrow} from '../images/stats.js';

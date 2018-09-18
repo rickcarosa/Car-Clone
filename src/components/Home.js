@@ -32,7 +32,6 @@ class Home extends Component {
     render(){
         window.onscroll = this.handleScroll
         // console.log(this.props.yOffset)
-        const {yOffset} = this.props
 
         return(
             <Background>
